@@ -565,16 +565,17 @@ input{font-family:inherit;appearance:none;-webkit-appearance:none;border-radius:
       <form onSubmit="{{ onSubmit }}" data-reveal data-reveal-delay="300" style="opacity:0;transform:translateY(26px);transition:opacity 1.1s ease,transform 1.1s ease;max-width:480px;margin:clamp(44px,6vh,68px) auto 0;text-align:left;display:flex;flex-direction:column;gap:30px">
         <label style="display:block">
           <span style="display:block;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(22,50,61,.6);margin-bottom:9px">Full Name</span>
-          <input type="text" autocomplete="name" onFocus="{{ onFieldFocus }}" onBlur="{{ onFieldBlur }}" style="width:100%;background:transparent;border:none;border-bottom:1px solid rgba(22,50,61,.24);padding:10px 0;font-size:.95rem;color:#16323D;outline:none;transition:border-color .4s ease">
+          <input type="text" name="name" required="required" autocomplete="name" onFocus="{{ onFieldFocus }}" onBlur="{{ onFieldBlur }}" style="width:100%;background:transparent;border:none;border-bottom:1px solid rgba(22,50,61,.24);padding:10px 0;font-size:.95rem;color:#16323D;outline:none;transition:border-color .4s ease">
         </label>
         <label style="display:block">
           <span style="display:block;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(22,50,61,.6);margin-bottom:9px">Email Address</span>
-          <input type="email" autocomplete="email" onFocus="{{ onFieldFocus }}" onBlur="{{ onFieldBlur }}" style="width:100%;background:transparent;border:none;border-bottom:1px solid rgba(22,50,61,.24);padding:10px 0;font-size:.95rem;color:#16323D;outline:none;transition:border-color .4s ease">
+          <input type="email" name="email" required="required" autocomplete="email" onFocus="{{ onFieldFocus }}" onBlur="{{ onFieldBlur }}" style="width:100%;background:transparent;border:none;border-bottom:1px solid rgba(22,50,61,.24);padding:10px 0;font-size:.95rem;color:#16323D;outline:none;transition:border-color .4s ease">
         </label>
         <label style="display:block">
           <span style="display:block;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(22,50,61,.6);margin-bottom:9px">Patron Reference <span style="text-transform:none;letter-spacing:0;color:rgba(22,50,61,.4)">(optional)</span></span>
-          <input type="text" onFocus="{{ onFieldFocus }}" onBlur="{{ onFieldBlur }}" style="width:100%;background:transparent;border:none;border-bottom:1px solid rgba(22,50,61,.24);padding:10px 0;font-size:.95rem;color:#16323D;outline:none;transition:border-color .4s ease">
+          <input type="text" name="patron_reference" onFocus="{{ onFieldFocus }}" onBlur="{{ onFieldBlur }}" style="width:100%;background:transparent;border:none;border-bottom:1px solid rgba(22,50,61,.24);padding:10px 0;font-size:.95rem;color:#16323D;outline:none;transition:border-color .4s ease">
         </label>
+        <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
         <button type="submit" onMouseEnter="{{ onNavBtnEnter }}" onMouseLeave="{{ onNavBtnLeave }}" style="margin-top:8px;width:100%;background:#315F74;color:#fff;border:1px solid #315F74;cursor:pointer;padding:18px;font-family:'Inter',system-ui,sans-serif;font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;font-weight:400;transition:background .45s ease,border-color .45s ease,color .45s ease">Submit Briefing Request</button>
       </form>
 
@@ -808,7 +809,47 @@ class Component extends DCLogic {
       },
       onFieldFocus: (e) => { e.currentTarget.style.borderColor = '#B8923C'; },
       onFieldBlur: (e) => { e.currentTarget.style.borderColor = 'rgba(22,50,61,0.24)'; },
-      onSubmit: (e) => { e.preventDefault(); },
+      onSubmit: async (e) => {
+        e.preventDefault();
+        const form = e.currentTarget;
+        const btn = form.querySelector('button[type="submit"]');
+        if (!btn || btn.disabled) return;
+        const nm = form.querySelector('input[name="name"]');
+        const em = form.querySelector('input[name="email"]');
+        if (!nm.value.trim() || !em.value.trim() || !em.checkValidity()) {
+          (nm.value.trim() ? em : nm).focus();
+          form.reportValidity();
+          return;
+        }
+        const label = btn.textContent;
+        btn.disabled = true;
+        btn.style.opacity = '0.6';
+        btn.textContent = 'Sending…';
+        const data = new FormData(form);
+        // Web3Forms key is public by design. TODO: replace with a key issued for info@musicavivatours.com.
+        data.append('access_key', '494a35cf-412b-484c-b9fe-17d3937aa22d');
+        data.append('subject', 'Musica Viva: allocation briefing request');
+        data.append('from_name', 'musicavivatours.com');
+        try {
+          const r = await fetch('https://api.web3forms.com/submit', {
+            method: 'POST', headers: { Accept: 'application/json' }, body: data
+          });
+          const j = await r.json().catch(() => ({}));
+          if (!r.ok || !j.success) throw new Error(j.message || ('HTTP ' + r.status));
+          form.reset();
+          btn.style.opacity = '1';
+          btn.textContent = 'Thank you. Your request has been received.';
+        } catch (err) {
+          btn.disabled = false;
+          btn.style.opacity = '1';
+          btn.textContent = label;
+          const body = 'Name: ' + (data.get('name') || '') + '\nEmail: ' + (data.get('email') || '') +
+                       '\nPatron reference: ' + (data.get('patron_reference') || '');
+          window.location.href = 'mailto:' + 'info' + '@' + 'musicavivatours.com' +
+            '?subject=' + encodeURIComponent('Allocation briefing request') +
+            '&body=' + encodeURIComponent(body);
+        }
+      },
     };
   }
 }
