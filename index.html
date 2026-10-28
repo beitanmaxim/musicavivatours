@@ -248,9 +248,87 @@ input{font-family:inherit;appearance:none;-webkit-appearance:none;border-radius:
 @keyframes mvFocus{from{opacity:0;filter:blur(7px)}to{opacity:1;filter:blur(0)}}
 .mv-gold{background:linear-gradient(95deg,#9A742B 0%,#E6C687 22%,#B8923C 44%,#F3E7C4 60%,#B8923C 78%,#9A742B 100%);background-size:100% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
 #new-year,#foundation,#artists,#tours,#gallery,#access{scroll-margin-top:88px}
-[data-desktop-nav] a{white-space:nowrap}
-.nye a:focus-visible,.nye button:focus-visible{outline:2px solid #C5A059;outline-offset:3px}
+/* New Year's Eve: arched palazzo windows. Uses the site's ink/blue/gold; melograno only on the two actions. */
+#new-year.nye{position:relative;background:#F8F6F0;color:#16323D;padding:clamp(72px,10vh,128px) clamp(20px,6vw,96px) clamp(64px,9vh,112px);border-top:1px solid rgba(22,50,61,.1);border-bottom:1px solid rgba(22,50,61,.1)}
+.nye-shell{max-width:1280px;margin:0 auto}
 .nye [hidden]{display:none !important}
+.nye-top{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:clamp(28px,5vh,56px);border-top:1px solid rgba(184,146,60,.55);padding-top:6px}
+.nye-lang{display:flex;gap:2px;margin-left:auto}
+.nye-lang button{min-width:44px;min-height:44px;padding:0 12px;cursor:pointer;background:transparent;border:0;border-bottom:1px solid transparent;color:#4A6470;font:500 .68rem 'Inter',system-ui,sans-serif;letter-spacing:.18em}
+.nye-lang button:hover{color:#16323D}
+.nye-lang button[aria-pressed="true"]{color:#16323D;border-bottom-color:#B8923C}
+.nye-intro{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.25fr);gap:clamp(36px,6vw,88px);align-items:center}
+.nye-eyebrow{display:flex;align-items:center;gap:14px;margin-bottom:22px}
+.nye-eyebrow span{width:40px;height:1px;background:#B8923C}
+.nye-eyebrow b{font-weight:500;font-size:.66rem;letter-spacing:.32em;text-transform:uppercase;color:#8A6A28}
+.nye-copy h2{margin:0;font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif;font-weight:400;font-size:clamp(2.1rem,3.6vw,3.3rem);line-height:1.06;letter-spacing:-.012em;color:#16323D}
+.nye-copy h2 em{display:block;font-style:italic;font-weight:300;color:#315F74}
+.nye-date{margin:20px 0 0;font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif;font-style:italic;font-size:clamp(1.15rem,1.8vw,1.45rem);line-height:1.3;color:#8A6A28;font-variant-numeric:lining-nums}
+.nye-lead{margin:22px 0 0;max-width:44ch;font-size:.95rem;line-height:1.85;font-weight:300;color:rgba(22,50,61,.82)}
+.nye-cta{display:inline-flex;align-items:center;margin-top:30px;min-height:48px;padding:15px 30px;background:#7D1A2A;color:#F8F6F0;text-decoration:none;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;font-weight:500;border:1px solid #7D1A2A;transition:background .35s ease,border-color .35s ease}
+.nye-cta:hover{background:#16323D;border-color:#16323D}
+.nye-windows{display:grid;grid-template-columns:1fr 1fr 1fr;gap:clamp(14px,2vw,26px);align-items:end;padding-bottom:0}
+.nye-window{margin:0;min-width:0;position:relative}
+.nye-window.is-centre{order:2;margin-bottom:0}
+.nye-window.is-side:first-of-type{order:1}
+.nye-window.is-side:last-of-type{order:3}
+.nye-frame{padding:6px;border:1px solid #B8923C;border-radius:999px 999px 0 0;background:#F8F6F0;position:relative}
+.nye-frame:after{content:'';position:absolute;inset:-6px -6px 0;border:1px solid rgba(184,146,60,.38);border-bottom:0;border-radius:999px 999px 0 0;pointer-events:none}
+.nye-pic{overflow:hidden;border-radius:999px 999px 0 0;background:#E7DFD0}
+.is-side .nye-pic{aspect-ratio:.66}
+.is-centre .nye-pic{aspect-ratio:.60}
+.nye-pic img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .9s cubic-bezier(.16,.7,.2,1)}
+.nye-rosette{position:absolute;left:50%;top:-22px;transform:translateX(-50%);width:28px;height:28px;z-index:2;background:#F8F6F0;padding:0 4px;box-sizing:content-box}
+.nye-window figcaption{margin-top:14px;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;text-align:center;color:#8A6A28;line-height:1.6}
+.nye-archive{margin:26px 0 0;padding-top:12px;border-top:1px solid rgba(184,146,60,.55);font-size:.7rem;line-height:1.7;color:#4A6470;text-align:right}
+.nye-more{margin-top:clamp(28px,4vh,44px);border-top:1px solid rgba(22,50,61,.16);scroll-margin-top:88px}
+.nye-more>summary{display:grid;grid-template-columns:1fr auto 32px;align-items:center;gap:20px;min-height:64px;padding:12px 0;cursor:pointer;list-style:none;color:#16323D}
+.nye-more>summary::-webkit-details-marker{display:none}
+.nye-sum-t{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;font-weight:500}
+.nye-sum-p{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.35rem;color:#7D1A2A;font-variant-numeric:lining-nums}
+.nye-sum-p small{font:400 .7rem 'Inter',system-ui,sans-serif;letter-spacing:.08em;color:#4A6470;margin-left:6px}
+.nye-sum-i{position:relative;width:16px;height:16px;justify-self:end}
+.nye-sum-i:before,.nye-sum-i:after{content:'';position:absolute;left:0;right:0;top:50%;height:1px;background:#16323D}
+.nye-sum-i:after{transform:rotate(90deg);transition:transform .3s ease}
+.nye-more[open] .nye-sum-i:after{transform:rotate(0)}
+.nye-body{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(32px,5vw,72px);padding:clamp(8px,2vh,20px) 0 clamp(20px,3vh,36px)}
+.nye h3{margin:0 0 12px;font:500 .62rem 'Inter',system-ui,sans-serif;letter-spacing:.28em;text-transform:uppercase;color:#8A6A28}
+.nye-prog h3:not(:first-of-type){margin-top:28px}
+.nye-prog p,.nye-prog-lead{margin:0 0 20px;font-size:.92rem;line-height:1.85;font-weight:300;color:rgba(22,50,61,.84);max-width:56ch}
+.nye-prog-lead{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:400 !important;font-size:1.25rem !important;line-height:1.5 !important;color:#16323D !important}
+.nye-list{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:9px;font-size:.92rem;line-height:1.6;color:rgba(22,50,61,.88);font-weight:300}
+.nye-list li{display:flex;gap:12px}.nye-list li span:first-child{color:#B8923C;flex-shrink:0}
+.nye-book{background:#fff;border:1px solid rgba(184,146,60,.5);padding:clamp(24px,3vw,40px)}
+.nye-price{margin:0;font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(2.4rem,4vw,3.2rem);line-height:1;color:#7D1A2A;font-variant-numeric:lining-nums}
+.nye-note{margin:10px 0 0;font-size:.78rem;line-height:1.6;color:#4A6470}
+.nye-two{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:26px 0;padding:22px 0;border-top:1px solid rgba(22,50,61,.12);border-bottom:1px solid rgba(22,50,61,.12)}
+.nye-pay{display:flex;align-items:center;justify-content:center;text-align:center;min-height:54px;padding:16px 24px;background:#7D1A2A;color:#F8F6F0;text-decoration:none;border:1px solid #7D1A2A;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;font-weight:500;transition:background .35s ease,border-color .35s ease}
+.nye-pay:hover{background:#16323D;border-color:#16323D}
+.nye-contact{margin:20px 0 0;font-size:.84rem;line-height:1.8;color:rgba(22,50,61,.86)}
+.nye-contact a{display:inline-block;padding:8px 0 4px;color:#16323D;text-decoration:none;border-bottom:1px solid #B8923C}
+.nye a:focus-visible,.nye button:focus-visible,.nye summary:focus-visible{outline:2px solid #315F74;outline-offset:4px}
+@media (hover:hover) and (prefers-reduced-motion:no-preference){.nye-window:hover .nye-pic img{transform:scale(1.05)}}
+@media (prefers-reduced-motion:reduce){.nye-pic img,.nye-cta,.nye-pay,.nye-sum-i:after{transition:none !important;transform:none !important}}
+@media (max-width:900px){
+  .nye-intro{grid-template-columns:1fr;gap:40px}
+  .nye-windows{max-width:640px;width:100%;margin:0 auto}
+  .nye-archive{text-align:left}
+  .nye-body{grid-template-columns:1fr}
+}
+@media (max-width:560px){
+  #new-year.nye{padding-top:56px}
+  .nye-windows{grid-template-columns:1fr 1fr;gap:28px 14px;max-width:420px;align-items:end}
+  .nye-window.is-centre{grid-column:1 / -1;order:0;width:60%;margin:0 auto}
+  .nye-window.is-side:first-of-type{order:1}
+  .nye-window.is-side:last-of-type{order:2}
+  .nye-rosette{top:-20px}
+  .nye-window figcaption{font-size:.56rem;letter-spacing:.14em}
+  .nye-more>summary{grid-template-columns:1fr 24px;gap:6px 12px}
+  .nye-sum-p{grid-column:1;grid-row:2}
+  .nye-sum-i{grid-column:2;grid-row:1 / span 2}
+  .nye-two{grid-template-columns:1fr;gap:20px}
+}
+[data-desktop-nav] a{white-space:nowrap}
 .mv-ggrid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(26px,3vw,46px)}
 @media (max-width:960px){.mv-ggrid{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:600px){.mv-ggrid{grid-template-columns:1fr}}
@@ -322,227 +400,235 @@ input{font-family:inherit;appearance:none;-webkit-appearance:none;border-radius:
   </section>
 
   <!-- ░░ NEW YEAR'S EVE 2026 · PALERMO (EN / IT / RU) ░░ -->
-  <!-- PDF downloads (brochure, flyer) are intentionally not linked: add per-language links only once the final files exist in assets/. -->
-  <section id="new-year" class="nye" data-screen-label="New Year's Eve" style="position:relative;background:#0F3B2C;color:#F8F6F0">
-    <div aria-hidden="true" style="height:40px;background:#0F3B2C url(assets/nye-majolica.svg) repeat-x center/auto 40px;border-bottom:1px solid rgba(197,160,89,.5)"></div>
-    <div style="padding:clamp(56px,9vh,120px) clamp(20px,6vw,96px) clamp(72px,11vh,140px)">
-      <div style="max-width:1280px;margin:0 auto">
-      <div role="group" aria-label="Language / Lingua / Язык" style="display:flex;justify-content:flex-end;gap:0;margin-bottom:clamp(28px,4vh,48px)">
-        <button type="button" data-lang-btn="en" lang="en" aria-label="English" aria-pressed="true" onClick="{{ onNyeLang }}" style="min-width:48px;min-height:44px;padding:0 14px;cursor:pointer;background:#C5A059;color:#0F3B2C;border:1px solid #C5A059;font-family:'Inter',system-ui,sans-serif;font-size:.68rem;letter-spacing:.2em;font-weight:500">EN</button>
-        <button type="button" data-lang-btn="it" lang="it" aria-label="Italiano" aria-pressed="false" onClick="{{ onNyeLang }}" style="min-width:48px;min-height:44px;padding:0 14px;cursor:pointer;background:transparent;color:#F8F6F0;border:1px solid #C5A059;font-family:'Inter',system-ui,sans-serif;font-size:.68rem;letter-spacing:.2em;font-weight:500">IT</button>
-        <button type="button" data-lang-btn="ru" lang="ru" aria-label="Русский" aria-pressed="false" onClick="{{ onNyeLang }}" style="min-width:48px;min-height:44px;padding:0 14px;cursor:pointer;background:transparent;color:#F8F6F0;border:1px solid #C5A059;font-family:'Inter',system-ui,sans-serif;font-size:.68rem;letter-spacing:.2em;font-weight:500">RU</button>
+  <!-- PDF downloads (brochure, flyer) are intentionally not linked: add per-language links inside .nye-book, below the pay button, only once the final files exist in assets/. -->
+  <section id="new-year" class="nye" data-screen-label="New Year's Eve">
+    <div class="nye-shell">
+      <div class="nye-top">
+        <span class="nye-top-l" aria-hidden="true"></span>
+        <div class="nye-lang" role="group" aria-label="Language / Lingua / Язык">
+        <button type="button" data-lang-btn="en" lang="en" aria-label="English" aria-pressed="true" onClick="{{ onNyeLang }}">EN</button>
+        <button type="button" data-lang-btn="it" lang="it" aria-label="Italiano" aria-pressed="false" onClick="{{ onNyeLang }}">IT</button>
+        <button type="button" data-lang-btn="ru" lang="ru" aria-label="Русский" aria-pressed="false" onClick="{{ onNyeLang }}">RU</button>
+        </div>
       </div>
 
       <div data-nye-lang="en" lang="en">
-        <div style="display:flex;flex-wrap:wrap;gap:clamp(40px,6vw,96px);align-items:flex-start">
-          <div style="flex:1 1 460px;min-width:280px">
-            <div style="display:flex;align-items:center;gap:14px;margin-bottom:26px">
-              <span style="width:40px;height:1px;background:#C5A059"></span>
-              <span style="font-size:.66rem;letter-spacing:.32em;text-transform:uppercase;color:#C5A059;font-weight:500">New Year’s Eve · Palermo</span>
-            </div>
-            <h2 style="margin:0;font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif;font-weight:400;font-size:clamp(2.5rem,5.4vw,4.6rem);line-height:1.02;letter-spacing:-.012em;color:#F8F6F0">New Year’s Eve at <span style="font-style:italic;font-weight:300;display:block">Palazzo Lanza Tomasi</span></h2>
-            <p style="margin:26px 0 0;font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif;font-style:italic;font-size:clamp(1.3rem,2.2vw,1.8rem);line-height:1.3;color:#C5A059;font-variant-numeric:lining-nums">31 December 2026 – 1 January 2027</p>
-            <p style="margin:30px 0 0;max-width:560px;font-size:.98rem;line-height:1.85;color:rgba(248,246,240,.88);font-weight:300">Spend New Year’s Eve at Palazzo Lanza Tomasi in Palermo, welcomed by Nicoletta Polo Lanza Tomasi, Duchess of Palma. The evening brings together live cello by Max Beitan, a saxophone quartet, a Sicilian–Slavic festive dinner, wine and Champagne.</p>
-            <a href="#nye-book" style="display:inline-block;margin-top:36px;text-decoration:none;background:#7D1A2A;color:#F8F6F0;border:1px solid #C5A059;padding:17px 32px;min-height:48px;font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;font-weight:400">Programme and booking</a>
-            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:36px 44px;margin-top:clamp(44px,6vh,72px);padding-top:34px;border-top:1px solid rgba(197,160,89,.4)">
-              <div>
-                <h3 style="margin:0 0 14px;font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:#C5A059;font-weight:500;font-family:'Inter',system-ui,sans-serif">The host and the house</h3>
-                <p style="margin:0;font-size:.94rem;line-height:1.8;color:rgba(248,246,240,.86);font-weight:300">Nicoletta Polo Lanza Tomasi, Duchess of Palma, receives the guests in Palermo, in the house of the author of <em>The Leopard</em>. The evening includes a private tour of the rooms and the library.</p>
-              </div>
-              <div>
-                <h3 style="margin:0 0 14px;font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:#C5A059;font-weight:500;font-family:'Inter',system-ui,sans-serif">The evening</h3>
-                <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;font-size:.94rem;line-height:1.6;color:rgba(248,246,240,.86);font-weight:300">
-            <li style="display:flex;gap:12px"><span aria-hidden="true" style="color:#C5A059;flex-shrink:0">·</span><span>Aperitif</span></li>
-            <li style="display:flex;gap:12px"><span aria-hidden="true" style="color:#C5A059;flex-shrink:0">·</span><span>Private tour of the rooms and the library</span></li>
-            <li style="display:flex;gap:12px"><span aria-hidden="true" style="color:#C5A059;flex-shrink:0">·</span><span>Live cello by Max Beitan and a saxophone quartet</span></li>
-            <li style="display:flex;gap:12px"><span aria-hidden="true" style="color:#C5A059;flex-shrink:0">·</span><span>Sicilian–Slavic festive dinner</span></li>
-            <li style="display:flex;gap:12px"><span aria-hidden="true" style="color:#C5A059;flex-shrink:0">·</span><span>Wine and Champagne</span></li>
-                </ul>
-              </div>
-            </div>
+        <div class="nye-intro">
+          <div class="nye-copy">
+            <div class="nye-eyebrow"><span></span><b>New Year’s Eve · Palermo</b></div>
+            <h2>New Year’s Eve at <em>Palazzo Lanza Tomasi</em></h2>
+            <p class="nye-date">31 December 2026 – 1 January 2027</p>
+            <p class="nye-lead">Spend New Year’s Eve at Palazzo Lanza Tomasi in Palermo, welcomed by Nicoletta Polo Lanza Tomasi, Duchess of Palma.</p>
+            <a class="nye-cta" href="#nye-book" onClick="{{ onNyeOpen }}">Programme and booking</a>
           </div>
-          <figure style="flex:0 1 440px;min-width:280px;margin:0;width:100%">
-            <div style="position:relative;border:1px solid #C5A059;padding:10px">
-              <img src="assets/nye-raffadali-table-1200.jpg" srcset="assets/nye-raffadali-table-720.jpg 645w, assets/nye-raffadali-table-1200.jpg 1075w" sizes="(max-width:760px) 92vw, 440px" width="1075" height="1200" alt="A long dinner table laid with silver candelabra, lit candles, glasses and napkins in a dim palace dining room" style="display:block;width:100%;height:auto;aspect-ratio:1075/1200;object-fit:cover">
-            </div>
-            <figcaption style="margin-top:14px;font-size:.72rem;letter-spacing:.06em;color:rgba(248,246,240,.7)">Archive: a dinner at Palazzo Raffadali, Sicily.</figcaption>
-          </figure>
+          <div class="nye-windows">
+        <figure class="nye-window is-side">
+          <div class="nye-frame"><div class="nye-pic"><img src="assets/nye-arch-hosts-960.jpg" srcset="assets/nye-arch-hosts-480.jpg 480w, assets/nye-arch-hosts-960.jpg 960w" sizes="(max-width:560px) 46vw, (max-width:900px) 200px, 230px" width="960" height="1455" alt="Nicoletta Polo Lanza Tomasi and Max Beitan side by side, smiling, in a drawing room with a tapestry and a gilt mirror" loading="lazy" decoding="async"></div></div>
+          <figcaption>Nicoletta &amp; Max</figcaption>
+        </figure>
+        <figure class="nye-window is-centre">
+          <img class="nye-rosette" src="assets/nye-rosette.svg" alt="" width="28" height="28">
+          <div class="nye-frame"><div class="nye-pic"><img src="assets/nye-arch-max-960.jpg" srcset="assets/nye-arch-max-480.jpg 480w, assets/nye-arch-max-960.jpg 960w" sizes="(max-width:560px) 46vw, (max-width:900px) 200px, 230px" width="960" height="1600" alt="Max Beitan standing with his cello beside a tall window and a gilt wall light" loading="lazy" decoding="async"></div></div>
+          <figcaption>Max Beitan</figcaption>
+        </figure>
+        <figure class="nye-window is-side">
+          <div class="nye-frame"><div class="nye-pic"><img src="assets/nye-arch-table-960.jpg" srcset="assets/nye-arch-table-480.jpg 480w, assets/nye-arch-table-960.jpg 960w" sizes="(max-width:560px) 46vw, (max-width:900px) 200px, 230px" width="960" height="1455" alt="A candlelit dinner table with a silver candelabra, pink candles, flowers and crystal glasses" loading="lazy" decoding="async"></div></div>
+          <figcaption>Candlelit table</figcaption>
+        </figure>
+          </div>
         </div>
+        <p class="nye-archive">Archive photographs. The candlelit table is from a dinner at Palazzo Raffadali, Sicily.</p>
 
-        <div id="nye-book" style="scroll-margin-top:88px;margin-top:clamp(56px,8vh,104px);background:#F8F6F0;color:#0F3B2C;padding:clamp(30px,4.5vw,64px);border-top:3px solid #7D1A2A">
-          <div style="display:flex;flex-wrap:wrap;gap:36px clamp(40px,6vw,96px);align-items:flex-start">
-            <div style="flex:1 1 260px;min-width:240px">
-              <h3 style="margin:0 0 14px;font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:#7D1A2A;font-weight:500;font-family:'Inter',system-ui,sans-serif">Price</h3>
-              <p style="margin:0;font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif;font-weight:500;font-size:clamp(2.8rem,5vw,4rem);line-height:1;color:#7D1A2A;font-variant-numeric:lining-nums">€1,000</p>
-              <p style="margin:12px 0 0;font-size:.86rem;line-height:1.6;color:rgba(15,59,44,.78)">per guest · one payment, in full</p>
-            </div>
-            <div style="flex:1 1 220px;min-width:200px">
-              <h3 style="margin:0 0 14px;font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:#7D1A2A;font-weight:500;font-family:'Inter',system-ui,sans-serif">Included</h3>
-              <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;font-size:.94rem;line-height:1.6;color:#0F3B2C">
-            <li style="display:flex;gap:12px"><span aria-hidden="true" style="color:#7D1A2A;flex-shrink:0">·</span><span>Aperitif</span></li>
-            <li style="display:flex;gap:12px"><span aria-hidden="true" style="color:#7D1A2A;flex-shrink:0">·</span><span>Private tour of the rooms and the library</span></li>
-            <li style="display:flex;gap:12px"><span aria-hidden="true" style="color:#7D1A2A;flex-shrink:0">·</span><span>Music: cello and saxophone quartet</span></li>
-            <li style="display:flex;gap:12px"><span aria-hidden="true" style="color:#7D1A2A;flex-shrink:0">·</span><span>Festive dinner, wine and Champagne</span></li>
+        <details class="nye-more" id="nye-book">
+          <summary><span class="nye-sum-t">Programme and booking</span><span class="nye-sum-p">€1,000 <small>per guest</small></span><span class="nye-sum-i" aria-hidden="true"></span></summary>
+          <div class="nye-body">
+            <div class="nye-prog">
+              <p class="nye-prog-lead">The evening brings together live cello by Max Beitan, a saxophone quartet, a Sicilian–Slavic festive dinner, wine and Champagne.</p>
+              <h3>The host and the house</h3>
+              <p>Nicoletta Polo Lanza Tomasi, Duchess of Palma, receives the guests in Palermo, in the house of the author of <em>The Leopard</em>. The evening includes a private tour of the rooms and the library.</p>
+              <h3>The evening</h3>
+              <ul class="nye-list">
+              <li><span aria-hidden="true">·</span><span>Aperitif</span></li>
+              <li><span aria-hidden="true">·</span><span>Private tour of the rooms and the library</span></li>
+              <li><span aria-hidden="true">·</span><span>Live cello by Max Beitan and a saxophone quartet</span></li>
+              <li><span aria-hidden="true">·</span><span>Sicilian–Slavic festive dinner</span></li>
+              <li><span aria-hidden="true">·</span><span>Wine and Champagne</span></li>
               </ul>
             </div>
-            <div style="flex:1 1 180px;min-width:180px">
-              <h3 style="margin:0 0 14px;font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:#7D1A2A;font-weight:500;font-family:'Inter',system-ui,sans-serif">Not included</h3>
-              <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;font-size:.94rem;line-height:1.6;color:#0F3B2C">
-            <li style="display:flex;gap:12px"><span aria-hidden="true" style="color:#7D1A2A;flex-shrink:0">·</span><span>Accommodation</span></li>
-            <li style="display:flex;gap:12px"><span aria-hidden="true" style="color:#7D1A2A;flex-shrink:0">·</span><span>Private transfers</span></li>
-              </ul>
+            <div class="nye-book">
+              <h3>Price</h3>
+              <p class="nye-price">€1,000</p>
+              <p class="nye-note">per guest · one payment, in full</p>
+              <div class="nye-two">
+                <div>
+                  <h3>Included</h3>
+                  <ul class="nye-list">
+              <li><span aria-hidden="true">·</span><span>Aperitif</span></li>
+              <li><span aria-hidden="true">·</span><span>Private tour of the rooms and the library</span></li>
+              <li><span aria-hidden="true">·</span><span>Music: cello and saxophone quartet</span></li>
+              <li><span aria-hidden="true">·</span><span>Festive dinner, wine and Champagne</span></li>
+                  </ul>
+                </div>
+                <div>
+                  <h3>Not included</h3>
+                  <ul class="nye-list">
+              <li><span aria-hidden="true">·</span><span>Accommodation</span></li>
+              <li><span aria-hidden="true">·</span><span>Private transfers</span></li>
+                  </ul>
+                </div>
+              </div>
+              <a class="nye-pay" href="https://buy.stripe.com/6oUdR9a4V2ahfEYbeW7Zu02" target="_blank" rel="noopener">Pay for one guest · €1,000</a>
+              <p class="nye-note">Opens Stripe’s secure checkout in a new tab. Card details are never entered on this site.</p>
+              <p class="nye-contact">Questions before booking:<br><a data-mv-email></a> · +41 77 929 44 77</p>
             </div>
           </div>
-          <div style="margin-top:38px;padding-top:30px;border-top:1px solid rgba(15,59,44,.2);display:flex;flex-wrap:wrap;gap:24px 40px;align-items:center;justify-content:space-between">
-            <div style="flex:1 1 300px;max-width:520px">
-              <a href="https://buy.stripe.com/6oUdR9a4V2ahfEYbeW7Zu02" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;background:#7D1A2A;color:#F8F6F0;border:1px solid #7D1A2A;padding:18px 28px;min-height:56px;font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;font-weight:500">Pay for one guest · €1,000</a>
-              <p style="margin:14px 0 0;font-size:.78rem;line-height:1.6;color:rgba(15,59,44,.78)">Opens Stripe’s secure checkout in a new tab. Card details are never entered on this site.</p>
-            </div>
-            <p style="flex:1 1 240px;margin:0;font-size:.86rem;line-height:1.8;color:rgba(15,59,44,.86)">Questions before booking:<br><a data-mv-email style="display:inline-block;padding:10px 0 6px;color:#0F3B2C;text-decoration:none;border-bottom:1px solid #C5A059"></a><br><span>+41 77 929 44 77</span></p>
-          </div>
-        </div>
+        </details>
       </div>
       <div data-nye-lang="it" lang="it" hidden="hidden">
-        <div style="display:flex;flex-wrap:wrap;gap:clamp(40px,6vw,96px);align-items:flex-start">
-          <div style="flex:1 1 460px;min-width:280px">
-            <div style="display:flex;align-items:center;gap:14px;margin-bottom:26px">
-              <span style="width:40px;height:1px;background:#C5A059"></span>
-              <span style="font-size:.66rem;letter-spacing:.32em;text-transform:uppercase;color:#C5A059;font-weight:500">San Silvestro · Palermo</span>
-            </div>
-            <h2 style="margin:0;font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif;font-weight:400;font-size:clamp(2.5rem,5.4vw,4.6rem);line-height:1.02;letter-spacing:-.012em;color:#F8F6F0">San Silvestro a <span style="font-style:italic;font-weight:300;display:block">Palazzo Lanza Tomasi</span></h2>
-            <p style="margin:26px 0 0;font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif;font-style:italic;font-size:clamp(1.3rem,2.2vw,1.8rem);line-height:1.3;color:#C5A059;font-variant-numeric:lining-nums">31 dicembre 2026 – 1 gennaio 2027</p>
-            <p style="margin:30px 0 0;max-width:560px;font-size:.98rem;line-height:1.85;color:rgba(248,246,240,.88);font-weight:300">Festeggiate San Silvestro a Palazzo Lanza Tomasi, a Palermo, accolti da Nicoletta Polo Lanza Tomasi, duchessa di Palma. La serata unisce il violoncello dal vivo di Max Beitan, un quartetto di sassofoni, una cena di festa siciliana e slava, vino e champagne.</p>
-            <a href="#nye-book-it" style="display:inline-block;margin-top:36px;text-decoration:none;background:#7D1A2A;color:#F8F6F0;border:1px solid #C5A059;padding:17px 32px;min-height:48px;font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;font-weight:400">Programma e prenotazione</a>
-            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:36px 44px;margin-top:clamp(44px,6vh,72px);padding-top:34px;border-top:1px solid rgba(197,160,89,.4)">
-              <div>
-                <h3 style="margin:0 0 14px;font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:#C5A059;font-weight:500;font-family:'Inter',system-ui,sans-serif">L’ospite e la casa</h3>
-                <p style="margin:0;font-size:.94rem;line-height:1.8;color:rgba(248,246,240,.86);font-weight:300">Nicoletta Polo Lanza Tomasi, duchessa di Palma, accoglie gli ospiti a Palermo, nella casa dell’autore del <em>Gattopardo</em>. La serata comprende una visita privata delle sale e della biblioteca.</p>
-              </div>
-              <div>
-                <h3 style="margin:0 0 14px;font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:#C5A059;font-weight:500;font-family:'Inter',system-ui,sans-serif">La serata</h3>
-                <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;font-size:.94rem;line-height:1.6;color:rgba(248,246,240,.86);font-weight:300">
-            <li style="display:flex;gap:12px"><span aria-hidden="true" style="color:#C5A059;flex-shrink:0">·</span><span>Aperitivo</span></li>
-            <li style="display:flex;gap:12px"><span aria-hidden="true" style="color:#C5A059;flex-shrink:0">·</span><span>Visita privata delle sale e della biblioteca</span></li>
-            <li style="display:flex;gap:12px"><span aria-hidden="true" style="color:#C5A059;flex-shrink:0">·</span><span>Violoncello dal vivo di Max Beitan e quartetto di sassofoni</span></li>
-            <li style="display:flex;gap:12px"><span aria-hidden="true" style="color:#C5A059;flex-shrink:0">·</span><span>Cena di festa siciliana e slava</span></li>
-            <li style="display:flex;gap:12px"><span aria-hidden="true" style="color:#C5A059;flex-shrink:0">·</span><span>Vino e champagne</span></li>
-                </ul>
-              </div>
-            </div>
+        <div class="nye-intro">
+          <div class="nye-copy">
+            <div class="nye-eyebrow"><span></span><b>San Silvestro · Palermo</b></div>
+            <h2>San Silvestro a <em>Palazzo Lanza Tomasi</em></h2>
+            <p class="nye-date">31 dicembre 2026 – 1 gennaio 2027</p>
+            <p class="nye-lead">Festeggiate San Silvestro a Palazzo Lanza Tomasi, a Palermo, accolti da Nicoletta Polo Lanza Tomasi, duchessa di Palma.</p>
+            <a class="nye-cta" href="#nye-book-it" onClick="{{ onNyeOpen }}">Programma e prenotazione</a>
           </div>
-          <figure style="flex:0 1 440px;min-width:280px;margin:0;width:100%">
-            <div style="position:relative;border:1px solid #C5A059;padding:10px">
-              <img src="assets/nye-raffadali-table-1200.jpg" srcset="assets/nye-raffadali-table-720.jpg 645w, assets/nye-raffadali-table-1200.jpg 1075w" sizes="(max-width:760px) 92vw, 440px" width="1075" height="1200" alt="Una lunga tavola apparecchiata con candelabri d’argento, candele accese, bicchieri e tovaglioli in una sala da pranzo di palazzo in penombra" style="display:block;width:100%;height:auto;aspect-ratio:1075/1200;object-fit:cover">
-            </div>
-            <figcaption style="margin-top:14px;font-size:.72rem;letter-spacing:.06em;color:rgba(248,246,240,.7)">Archivio: una cena a Palazzo Raffadali, Sicilia.</figcaption>
-          </figure>
+          <div class="nye-windows">
+        <figure class="nye-window is-side">
+          <div class="nye-frame"><div class="nye-pic"><img src="assets/nye-arch-hosts-960.jpg" srcset="assets/nye-arch-hosts-480.jpg 480w, assets/nye-arch-hosts-960.jpg 960w" sizes="(max-width:560px) 46vw, (max-width:900px) 200px, 230px" width="960" height="1455" alt="Nicoletta Polo Lanza Tomasi e Max Beitan accanto, sorridenti, in un salotto con un arazzo e uno specchio dorato" loading="lazy" decoding="async"></div></div>
+          <figcaption>Nicoletta e Max</figcaption>
+        </figure>
+        <figure class="nye-window is-centre">
+          <img class="nye-rosette" src="assets/nye-rosette.svg" alt="" width="28" height="28">
+          <div class="nye-frame"><div class="nye-pic"><img src="assets/nye-arch-max-960.jpg" srcset="assets/nye-arch-max-480.jpg 480w, assets/nye-arch-max-960.jpg 960w" sizes="(max-width:560px) 46vw, (max-width:900px) 200px, 230px" width="960" height="1600" alt="Max Beitan in piedi con il suo violoncello accanto a un’alta finestra e a un’applique dorata" loading="lazy" decoding="async"></div></div>
+          <figcaption>Max Beitan</figcaption>
+        </figure>
+        <figure class="nye-window is-side">
+          <div class="nye-frame"><div class="nye-pic"><img src="assets/nye-arch-table-960.jpg" srcset="assets/nye-arch-table-480.jpg 480w, assets/nye-arch-table-960.jpg 960w" sizes="(max-width:560px) 46vw, (max-width:900px) 200px, 230px" width="960" height="1455" alt="Una tavola a lume di candela con un candelabro d’argento, candele rosa, fiori e bicchieri di cristallo" loading="lazy" decoding="async"></div></div>
+          <figcaption>Tavola a lume di candela</figcaption>
+        </figure>
+          </div>
         </div>
+        <p class="nye-archive">Fotografie d’archivio. La tavola a lume di candela è di una cena a Palazzo Raffadali, in Sicilia.</p>
 
-        <div id="nye-book-it" style="scroll-margin-top:88px;margin-top:clamp(56px,8vh,104px);background:#F8F6F0;color:#0F3B2C;padding:clamp(30px,4.5vw,64px);border-top:3px solid #7D1A2A">
-          <div style="display:flex;flex-wrap:wrap;gap:36px clamp(40px,6vw,96px);align-items:flex-start">
-            <div style="flex:1 1 260px;min-width:240px">
-              <h3 style="margin:0 0 14px;font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:#7D1A2A;font-weight:500;font-family:'Inter',system-ui,sans-serif">Prezzo</h3>
-              <p style="margin:0;font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif;font-weight:500;font-size:clamp(2.8rem,5vw,4rem);line-height:1;color:#7D1A2A;font-variant-numeric:lining-nums">€1.000</p>
-              <p style="margin:12px 0 0;font-size:.86rem;line-height:1.6;color:rgba(15,59,44,.78)">a persona · pagamento unico, per intero</p>
-            </div>
-            <div style="flex:1 1 220px;min-width:200px">
-              <h3 style="margin:0 0 14px;font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:#7D1A2A;font-weight:500;font-family:'Inter',system-ui,sans-serif">Incluso</h3>
-              <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;font-size:.94rem;line-height:1.6;color:#0F3B2C">
-            <li style="display:flex;gap:12px"><span aria-hidden="true" style="color:#7D1A2A;flex-shrink:0">·</span><span>Aperitivo</span></li>
-            <li style="display:flex;gap:12px"><span aria-hidden="true" style="color:#7D1A2A;flex-shrink:0">·</span><span>Visita privata delle sale e della biblioteca</span></li>
-            <li style="display:flex;gap:12px"><span aria-hidden="true" style="color:#7D1A2A;flex-shrink:0">·</span><span>Musica: violoncello e quartetto di sassofoni</span></li>
-            <li style="display:flex;gap:12px"><span aria-hidden="true" style="color:#7D1A2A;flex-shrink:0">·</span><span>Cena di festa, vino e champagne</span></li>
+        <details class="nye-more" id="nye-book-it">
+          <summary><span class="nye-sum-t">Programma e prenotazione</span><span class="nye-sum-p">€1.000 <small>a persona</small></span><span class="nye-sum-i" aria-hidden="true"></span></summary>
+          <div class="nye-body">
+            <div class="nye-prog">
+              <p class="nye-prog-lead">La serata unisce il violoncello dal vivo di Max Beitan, un quartetto di sassofoni, una cena di festa siciliana e slava, vino e champagne.</p>
+              <h3>L’ospite e la casa</h3>
+              <p>Nicoletta Polo Lanza Tomasi, duchessa di Palma, accoglie gli ospiti a Palermo, nella casa dell’autore del <em>Gattopardo</em>. La serata comprende una visita privata delle sale e della biblioteca.</p>
+              <h3>La serata</h3>
+              <ul class="nye-list">
+              <li><span aria-hidden="true">·</span><span>Aperitivo</span></li>
+              <li><span aria-hidden="true">·</span><span>Visita privata delle sale e della biblioteca</span></li>
+              <li><span aria-hidden="true">·</span><span>Violoncello dal vivo di Max Beitan e quartetto di sassofoni</span></li>
+              <li><span aria-hidden="true">·</span><span>Cena di festa siciliana e slava</span></li>
+              <li><span aria-hidden="true">·</span><span>Vino e champagne</span></li>
               </ul>
             </div>
-            <div style="flex:1 1 180px;min-width:180px">
-              <h3 style="margin:0 0 14px;font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:#7D1A2A;font-weight:500;font-family:'Inter',system-ui,sans-serif">Non incluso</h3>
-              <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;font-size:.94rem;line-height:1.6;color:#0F3B2C">
-            <li style="display:flex;gap:12px"><span aria-hidden="true" style="color:#7D1A2A;flex-shrink:0">·</span><span>Alloggio</span></li>
-            <li style="display:flex;gap:12px"><span aria-hidden="true" style="color:#7D1A2A;flex-shrink:0">·</span><span>Transfer privati</span></li>
-              </ul>
+            <div class="nye-book">
+              <h3>Prezzo</h3>
+              <p class="nye-price">€1.000</p>
+              <p class="nye-note">a persona · pagamento unico, per intero</p>
+              <div class="nye-two">
+                <div>
+                  <h3>Incluso</h3>
+                  <ul class="nye-list">
+              <li><span aria-hidden="true">·</span><span>Aperitivo</span></li>
+              <li><span aria-hidden="true">·</span><span>Visita privata delle sale e della biblioteca</span></li>
+              <li><span aria-hidden="true">·</span><span>Musica: violoncello e quartetto di sassofoni</span></li>
+              <li><span aria-hidden="true">·</span><span>Cena di festa, vino e champagne</span></li>
+                  </ul>
+                </div>
+                <div>
+                  <h3>Non incluso</h3>
+                  <ul class="nye-list">
+              <li><span aria-hidden="true">·</span><span>Alloggio</span></li>
+              <li><span aria-hidden="true">·</span><span>Transfer privati</span></li>
+                  </ul>
+                </div>
+              </div>
+              <a class="nye-pay" href="https://buy.stripe.com/6oUdR9a4V2ahfEYbeW7Zu02" target="_blank" rel="noopener">Paga per un ospite · €1.000</a>
+              <p class="nye-note">Si apre il checkout sicuro di Stripe in una nuova scheda. I dati della carta non vengono mai inseriti su questo sito.</p>
+              <p class="nye-contact">Domande prima di prenotare:<br><a data-mv-email></a> · +41 77 929 44 77</p>
             </div>
           </div>
-          <div style="margin-top:38px;padding-top:30px;border-top:1px solid rgba(15,59,44,.2);display:flex;flex-wrap:wrap;gap:24px 40px;align-items:center;justify-content:space-between">
-            <div style="flex:1 1 300px;max-width:520px">
-              <a href="https://buy.stripe.com/6oUdR9a4V2ahfEYbeW7Zu02" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;background:#7D1A2A;color:#F8F6F0;border:1px solid #7D1A2A;padding:18px 28px;min-height:56px;font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;font-weight:500">Paga per un ospite · €1.000</a>
-              <p style="margin:14px 0 0;font-size:.78rem;line-height:1.6;color:rgba(15,59,44,.78)">Si apre il checkout sicuro di Stripe in una nuova scheda. I dati della carta non vengono mai inseriti su questo sito.</p>
-            </div>
-            <p style="flex:1 1 240px;margin:0;font-size:.86rem;line-height:1.8;color:rgba(15,59,44,.86)">Domande prima di prenotare:<br><a data-mv-email style="display:inline-block;padding:10px 0 6px;color:#0F3B2C;text-decoration:none;border-bottom:1px solid #C5A059"></a><br><span>+41 77 929 44 77</span></p>
-          </div>
-        </div>
+        </details>
       </div>
       <div data-nye-lang="ru" lang="ru" hidden="hidden">
-        <div style="display:flex;flex-wrap:wrap;gap:clamp(40px,6vw,96px);align-items:flex-start">
-          <div style="flex:1 1 460px;min-width:280px">
-            <div style="display:flex;align-items:center;gap:14px;margin-bottom:26px">
-              <span style="width:40px;height:1px;background:#C5A059"></span>
-              <span style="font-size:.66rem;letter-spacing:.32em;text-transform:uppercase;color:#C5A059;font-weight:500">Новогодняя ночь · Палермо</span>
-            </div>
-            <h2 style="margin:0;font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif;font-weight:400;font-size:clamp(2.5rem,5.4vw,4.6rem);line-height:1.02;letter-spacing:-.012em;color:#F8F6F0">Новогодняя ночь в <span style="font-style:italic;font-weight:300;display:block">Palazzo Lanza Tomasi</span></h2>
-            <p style="margin:26px 0 0;font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif;font-style:italic;font-size:clamp(1.3rem,2.2vw,1.8rem);line-height:1.3;color:#C5A059;font-variant-numeric:lining-nums">31 декабря 2026 — 1 января 2027</p>
-            <p style="margin:30px 0 0;max-width:560px;font-size:.98rem;line-height:1.85;color:rgba(248,246,240,.88);font-weight:300">Встретьте Новый год в Palazzo Lanza Tomasi в Палермо, где гостей принимает Николетта Поло Ланца Томази, герцогиня Пальмы. Вечер объединит виолончель Макса Бейтана, саксофонный квартет, праздничный сицилийско-славянский ужин, вино и шампанское.</p>
-            <a href="#nye-book-ru" style="display:inline-block;margin-top:36px;text-decoration:none;background:#7D1A2A;color:#F8F6F0;border:1px solid #C5A059;padding:17px 32px;min-height:48px;font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;font-weight:400">Программа и бронирование</a>
-            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:36px 44px;margin-top:clamp(44px,6vh,72px);padding-top:34px;border-top:1px solid rgba(197,160,89,.4)">
-              <div>
-                <h3 style="margin:0 0 14px;font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:#C5A059;font-weight:500;font-family:'Inter',system-ui,sans-serif">Хозяйка и дом</h3>
-                <p style="margin:0;font-size:.94rem;line-height:1.8;color:rgba(248,246,240,.86);font-weight:300">Николетта Поло Ланца Томази, герцогиня Пальмы, принимает гостей в Палермо, в доме автора «Леопарда». В программе вечера частная экскурсия по залам и библиотеке.</p>
-              </div>
-              <div>
-                <h3 style="margin:0 0 14px;font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:#C5A059;font-weight:500;font-family:'Inter',system-ui,sans-serif">Вечер</h3>
-                <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;font-size:.94rem;line-height:1.6;color:rgba(248,246,240,.86);font-weight:300">
-            <li style="display:flex;gap:12px"><span aria-hidden="true" style="color:#C5A059;flex-shrink:0">·</span><span>Аперитив</span></li>
-            <li style="display:flex;gap:12px"><span aria-hidden="true" style="color:#C5A059;flex-shrink:0">·</span><span>Частная экскурсия по залам и библиотеке</span></li>
-            <li style="display:flex;gap:12px"><span aria-hidden="true" style="color:#C5A059;flex-shrink:0">·</span><span>Виолончель Макса Бейтана и саксофонный квартет</span></li>
-            <li style="display:flex;gap:12px"><span aria-hidden="true" style="color:#C5A059;flex-shrink:0">·</span><span>Праздничный сицилийско-славянский ужин</span></li>
-            <li style="display:flex;gap:12px"><span aria-hidden="true" style="color:#C5A059;flex-shrink:0">·</span><span>Вино и шампанское</span></li>
-                </ul>
-              </div>
-            </div>
+        <div class="nye-intro">
+          <div class="nye-copy">
+            <div class="nye-eyebrow"><span></span><b>Новогодняя ночь · Палермо</b></div>
+            <h2>Новогодняя ночь в <em>Palazzo Lanza Tomasi</em></h2>
+            <p class="nye-date">31 декабря 2026 — 1 января 2027</p>
+            <p class="nye-lead">Встретьте Новый год в Palazzo Lanza Tomasi в Палермо, где гостей принимает Николетта Поло Ланца Томази, герцогиня Пальмы.</p>
+            <a class="nye-cta" href="#nye-book-ru" onClick="{{ onNyeOpen }}">Программа и бронирование</a>
           </div>
-          <figure style="flex:0 1 440px;min-width:280px;margin:0;width:100%">
-            <div style="position:relative;border:1px solid #C5A059;padding:10px">
-              <img src="assets/nye-raffadali-table-1200.jpg" srcset="assets/nye-raffadali-table-720.jpg 645w, assets/nye-raffadali-table-1200.jpg 1075w" sizes="(max-width:760px) 92vw, 440px" width="1075" height="1200" alt="Длинный стол с серебряными канделябрами, зажжёнными свечами, бокалами и салфетками в полутёмной столовой палаццо" style="display:block;width:100%;height:auto;aspect-ratio:1075/1200;object-fit:cover">
-            </div>
-            <figcaption style="margin-top:14px;font-size:.72rem;letter-spacing:.06em;color:rgba(248,246,240,.7)">Архив: ужин в Palazzo Raffadali, Сицилия.</figcaption>
-          </figure>
+          <div class="nye-windows">
+        <figure class="nye-window is-side">
+          <div class="nye-frame"><div class="nye-pic"><img src="assets/nye-arch-hosts-960.jpg" srcset="assets/nye-arch-hosts-480.jpg 480w, assets/nye-arch-hosts-960.jpg 960w" sizes="(max-width:560px) 46vw, (max-width:900px) 200px, 230px" width="960" height="1455" alt="Николетта Поло Ланца Томази и Макс Бейтан рядом, улыбаются, в гостиной с гобеленом и золочёным зеркалом" loading="lazy" decoding="async"></div></div>
+          <figcaption>Николетта и Макс</figcaption>
+        </figure>
+        <figure class="nye-window is-centre">
+          <img class="nye-rosette" src="assets/nye-rosette.svg" alt="" width="28" height="28">
+          <div class="nye-frame"><div class="nye-pic"><img src="assets/nye-arch-max-960.jpg" srcset="assets/nye-arch-max-480.jpg 480w, assets/nye-arch-max-960.jpg 960w" sizes="(max-width:560px) 46vw, (max-width:900px) 200px, 230px" width="960" height="1600" alt="Макс Бейтан с виолончелью у высокого окна рядом с золочёным бра" loading="lazy" decoding="async"></div></div>
+          <figcaption>Макс Бейтан</figcaption>
+        </figure>
+        <figure class="nye-window is-side">
+          <div class="nye-frame"><div class="nye-pic"><img src="assets/nye-arch-table-960.jpg" srcset="assets/nye-arch-table-480.jpg 480w, assets/nye-arch-table-960.jpg 960w" sizes="(max-width:560px) 46vw, (max-width:900px) 200px, 230px" width="960" height="1455" alt="Стол при свечах с серебряным канделябром, розовыми свечами, цветами и хрустальными бокалами" loading="lazy" decoding="async"></div></div>
+          <figcaption>Стол при свечах</figcaption>
+        </figure>
+          </div>
         </div>
+        <p class="nye-archive">Архивные фотографии. Стол при свечах — с ужина в Palazzo Raffadali, Сицилия.</p>
 
-        <div id="nye-book-ru" style="scroll-margin-top:88px;margin-top:clamp(56px,8vh,104px);background:#F8F6F0;color:#0F3B2C;padding:clamp(30px,4.5vw,64px);border-top:3px solid #7D1A2A">
-          <div style="display:flex;flex-wrap:wrap;gap:36px clamp(40px,6vw,96px);align-items:flex-start">
-            <div style="flex:1 1 260px;min-width:240px">
-              <h3 style="margin:0 0 14px;font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:#7D1A2A;font-weight:500;font-family:'Inter',system-ui,sans-serif">Стоимость</h3>
-              <p style="margin:0;font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif;font-weight:500;font-size:clamp(2.8rem,5vw,4rem);line-height:1;color:#7D1A2A;font-variant-numeric:lining-nums">€1000</p>
-              <p style="margin:12px 0 0;font-size:.86rem;line-height:1.6;color:rgba(15,59,44,.78)">с человека · одна оплата, полностью</p>
-            </div>
-            <div style="flex:1 1 220px;min-width:200px">
-              <h3 style="margin:0 0 14px;font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:#7D1A2A;font-weight:500;font-family:'Inter',system-ui,sans-serif">Входит</h3>
-              <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;font-size:.94rem;line-height:1.6;color:#0F3B2C">
-            <li style="display:flex;gap:12px"><span aria-hidden="true" style="color:#7D1A2A;flex-shrink:0">·</span><span>Аперитив</span></li>
-            <li style="display:flex;gap:12px"><span aria-hidden="true" style="color:#7D1A2A;flex-shrink:0">·</span><span>Частная экскурсия по залам и библиотеке</span></li>
-            <li style="display:flex;gap:12px"><span aria-hidden="true" style="color:#7D1A2A;flex-shrink:0">·</span><span>Музыка: виолончель и саксофонный квартет</span></li>
-            <li style="display:flex;gap:12px"><span aria-hidden="true" style="color:#7D1A2A;flex-shrink:0">·</span><span>Праздничный ужин, вино и шампанское</span></li>
+        <details class="nye-more" id="nye-book-ru">
+          <summary><span class="nye-sum-t">Программа и бронирование</span><span class="nye-sum-p">€1000 <small>с человека</small></span><span class="nye-sum-i" aria-hidden="true"></span></summary>
+          <div class="nye-body">
+            <div class="nye-prog">
+              <p class="nye-prog-lead">Вечер объединит виолончель Макса Бейтана, саксофонный квартет, праздничный сицилийско-славянский ужин, вино и шампанское.</p>
+              <h3>Хозяйка и дом</h3>
+              <p>Николетта Поло Ланца Томази, герцогиня Пальмы, принимает гостей в Палермо, в доме автора «Леопарда». В программе вечера частная экскурсия по залам и библиотеке.</p>
+              <h3>Вечер</h3>
+              <ul class="nye-list">
+              <li><span aria-hidden="true">·</span><span>Аперитив</span></li>
+              <li><span aria-hidden="true">·</span><span>Частная экскурсия по залам и библиотеке</span></li>
+              <li><span aria-hidden="true">·</span><span>Виолончель Макса Бейтана и саксофонный квартет</span></li>
+              <li><span aria-hidden="true">·</span><span>Праздничный сицилийско-славянский ужин</span></li>
+              <li><span aria-hidden="true">·</span><span>Вино и шампанское</span></li>
               </ul>
             </div>
-            <div style="flex:1 1 180px;min-width:180px">
-              <h3 style="margin:0 0 14px;font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:#7D1A2A;font-weight:500;font-family:'Inter',system-ui,sans-serif">Не входит</h3>
-              <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;font-size:.94rem;line-height:1.6;color:#0F3B2C">
-            <li style="display:flex;gap:12px"><span aria-hidden="true" style="color:#7D1A2A;flex-shrink:0">·</span><span>Размещение</span></li>
-            <li style="display:flex;gap:12px"><span aria-hidden="true" style="color:#7D1A2A;flex-shrink:0">·</span><span>Индивидуальный трансфер</span></li>
-              </ul>
+            <div class="nye-book">
+              <h3>Стоимость</h3>
+              <p class="nye-price">€1000</p>
+              <p class="nye-note">с человека · одна оплата, полностью</p>
+              <div class="nye-two">
+                <div>
+                  <h3>Входит</h3>
+                  <ul class="nye-list">
+              <li><span aria-hidden="true">·</span><span>Аперитив</span></li>
+              <li><span aria-hidden="true">·</span><span>Частная экскурсия по залам и библиотеке</span></li>
+              <li><span aria-hidden="true">·</span><span>Музыка: виолончель и саксофонный квартет</span></li>
+              <li><span aria-hidden="true">·</span><span>Праздничный ужин, вино и шампанское</span></li>
+                  </ul>
+                </div>
+                <div>
+                  <h3>Не входит</h3>
+                  <ul class="nye-list">
+              <li><span aria-hidden="true">·</span><span>Размещение</span></li>
+              <li><span aria-hidden="true">·</span><span>Индивидуальный трансфер</span></li>
+                  </ul>
+                </div>
+              </div>
+              <a class="nye-pay" href="https://buy.stripe.com/6oUdR9a4V2ahfEYbeW7Zu02" target="_blank" rel="noopener">Оплатить за одного гостя · €1000</a>
+              <p class="nye-note">Откроется защищённая страница оплаты Stripe в новой вкладке. Данные карты на этом сайте не вводятся.</p>
+              <p class="nye-contact">Вопросы до бронирования:<br><a data-mv-email></a> · +41 77 929 44 77</p>
             </div>
           </div>
-          <div style="margin-top:38px;padding-top:30px;border-top:1px solid rgba(15,59,44,.2);display:flex;flex-wrap:wrap;gap:24px 40px;align-items:center;justify-content:space-between">
-            <div style="flex:1 1 300px;max-width:520px">
-              <a href="https://buy.stripe.com/6oUdR9a4V2ahfEYbeW7Zu02" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;background:#7D1A2A;color:#F8F6F0;border:1px solid #7D1A2A;padding:18px 28px;min-height:56px;font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;font-weight:500">Оплатить за одного гостя · €1000</a>
-              <p style="margin:14px 0 0;font-size:.78rem;line-height:1.6;color:rgba(15,59,44,.78)">Откроется защищённая страница оплаты Stripe в новой вкладке. Данные карты на этом сайте не вводятся.</p>
-            </div>
-            <p style="flex:1 1 240px;margin:0;font-size:.86rem;line-height:1.8;color:rgba(15,59,44,.86)">Вопросы до бронирования:<br><a data-mv-email style="display:inline-block;padding:10px 0 6px;color:#0F3B2C;text-decoration:none;border-bottom:1px solid #C5A059"></a><br><span>+41 77 929 44 77</span></p>
-          </div>
-        </div>
-      </div>
+        </details>
       </div>
     </div>
-    <div aria-hidden="true" style="height:40px;background:#0F3B2C url(assets/nye-majolica.svg) repeat-x center/auto 40px;border-top:1px solid rgba(197,160,89,.5)"></div>
   </section>
 
   <!-- ░░ MANIFESTO ░░ -->
@@ -1005,21 +1091,27 @@ class Component extends DCLogic {
     });
 
     // ── New Year's Eve: EN/IT/RU switch. Deep links: #new-year (EN), #new-year-it, #new-year-ru ──
+    //    #nye-book, #nye-book-it, #nye-book-ru open the programme and booking panel.
+    this._nyeHash = (h) => {
+      const m = /^#(new-year|nye-book)(?:-(it|ru))?$/.exec(h);
+      return m ? { lang: m[2] || 'en', book: m[1] === 'nye-book' } : null;
+    };
     this._onHash = () => {
-      const m = /^#new-year(?:-(it|ru))?$/.exec(window.location.hash);
-      if (m && m[1]) {
-        this._setNyeLang(m[1]);
-        const sec = root.querySelector('#new-year');
-        if (sec) sec.scrollIntoView();
-      }
+      const t = this._nyeHash(window.location.hash);
+      if (!t) return;
+      if (t.lang !== 'en' || t.book) this._setNyeLang(t.lang);
+      if (t.book) this._openNyeBook(t.lang);
+      const sec = t.book ? root.querySelector('#nye-book' + (t.lang === 'en' ? '' : '-' + t.lang)) : root.querySelector('#new-year');
+      if (sec && (t.book || t.lang !== 'en')) sec.scrollIntoView();
     };
     window.addEventListener('hashchange', this._onHash);
-    const dl = /^#new-year-(it|ru)$/.exec(window.location.hash);
-    if (dl) {
-      this._setNyeLang(dl[1]);
+    const dl = this._nyeHash(window.location.hash);
+    if (dl && (dl.lang !== 'en' || dl.book)) {
+      this._setNyeLang(dl.lang);
+      if (dl.book) this._openNyeBook(dl.lang);
       // Late layout (fonts, video) can shift the page, so re-check a few times.
       [350, 900, 1800].forEach((ms) => setTimeout(() => {
-        const sec = root.querySelector('#new-year');
+        const sec = root.querySelector(dl.book ? '#nye-book' + (dl.lang === 'en' ? '' : '-' + dl.lang) : '#new-year');
         if (sec && Math.abs(sec.getBoundingClientRect().top - 88) > 6) sec.scrollIntoView({ behavior: 'instant' });
       }, ms));
     }
@@ -1052,13 +1144,20 @@ class Component extends DCLogic {
   _setNyeLang(code) {
     const root = this.root.current;
     if (!root) return;
+    const wasOpen = !!root.querySelector('[data-nye-lang]:not([hidden]) details.nye-more[open]');
     root.querySelectorAll('[data-nye-lang]').forEach((b) => { b.hidden = b.getAttribute('data-nye-lang') !== code; });
+    const d = root.querySelector('[data-nye-lang="' + code + '"] details.nye-more');
+    if (d && wasOpen) d.open = true;
     root.querySelectorAll('[data-lang-btn]').forEach((b) => {
-      const on = b.getAttribute('data-lang-btn') === code;
-      b.setAttribute('aria-pressed', on ? 'true' : 'false');
-      b.style.background = on ? '#C5A059' : 'transparent';
-      b.style.color = on ? '#0F3B2C' : '#F8F6F0';
+      b.setAttribute('aria-pressed', b.getAttribute('data-lang-btn') === code ? 'true' : 'false');
     });
+  }
+
+  _openNyeBook(code) {
+    const root = this.root.current;
+    const d = root && root.querySelector('[data-nye-lang="' + code + '"] details.nye-more');
+    if (d) d.open = true;
+    return d;
   }
 
   _setMenu(open) {
@@ -1075,6 +1174,13 @@ class Component extends DCLogic {
     return {
       root: this.root,
       toggleMenu: () => this._setMenu(!this._menuOpen),
+      onNyeOpen: (e) => {
+        e.preventDefault();
+        const code = e.currentTarget.closest('[data-nye-lang]').getAttribute('data-nye-lang');
+        const d = this._openNyeBook(code);
+        if (d) d.scrollIntoView();
+        try { history.replaceState(null, '', '#nye-book' + (code === 'en' ? '' : '-' + code)); } catch (err) {}
+      },
       onNyeLang: (e) => {
         const code = e.currentTarget.getAttribute('data-lang-btn');
         this._setNyeLang(code);
