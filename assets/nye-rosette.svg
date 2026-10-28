@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
-  <g transform="translate(14 14)" stroke="#B8923C" stroke-width="1">
+  <g transform="translate(14 14)" stroke="#1F5A44" stroke-width="1.1">
     <rect x="-8" y="-8" width="16" height="16"/>
     <rect x="-8" y="-8" width="16" height="16" transform="rotate(45)"/>
-    <circle r="3.4" fill="#7D1A2A" stroke="none"/>
-    <circle r="1" fill="#B8923C" stroke="none"/>
+    <circle r="3.4" fill="#0F3B2C" stroke="none"/>
+    <circle r="1.1" fill="#C5A059" stroke="none"/>
   </g>
 </svg>

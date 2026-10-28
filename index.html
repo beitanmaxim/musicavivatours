@@ -266,6 +266,9 @@ input{font-family:inherit;appearance:none;-webkit-appearance:none;border-radius:
 .nye-copy h2 em{display:block;font-style:italic;font-weight:300;color:#1F5A44}
 .nye-date:after{content:'';display:inline-block;width:14px;height:14px;margin-left:12px;vertical-align:-1px;background:url(assets/nye-sparkle.svg) center/contain no-repeat}
 .nye-date{margin:20px 0 0;font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif;font-style:italic;font-size:clamp(1.15rem,1.8vw,1.45rem);line-height:1.3;color:#8A6A28;font-variant-numeric:lining-nums}
+.nye-prog-line{margin:18px 0 0;max-width:46ch;font-size:.84rem;line-height:1.75;color:#16323D}
+.nye-prog-line b{display:block;margin-bottom:6px;font:500 .62rem 'Inter',system-ui,sans-serif;letter-spacing:.28em;text-transform:uppercase;color:#8A6A28}
+.nye-prog-line i{font-style:normal;color:#1F5A44;padding:0 4px}
 .nye-lead{margin:22px 0 0;max-width:44ch;font-size:.95rem;line-height:1.85;font-weight:300;color:rgba(22,50,61,.82)}
 .nye-cta{display:inline-flex;align-items:center;margin-top:30px;min-height:48px;padding:15px 30px;background:#7D1A2A;color:#F8F6F0;text-decoration:none;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;font-weight:500;border:1px solid #7D1A2A;transition:background .35s ease,border-color .35s ease}
 .nye-cta:hover{background:#16323D;border-color:#16323D}
@@ -276,7 +279,7 @@ input{font-family:inherit;appearance:none;-webkit-appearance:none;border-radius:
 .nye-window.is-centre{order:2;margin-bottom:0}
 .nye-window.is-side:first-of-type{order:1}
 .nye-window.is-side:last-of-type{order:3}
-.nye-frame{padding:6px;border:1px solid #B8923C;border-radius:999px 999px 0 0;background:#0F3B2C;position:relative}
+.nye-frame{padding:6px;border:1px solid #B8923C;border-radius:999px 999px 0 0;background:#8C1C2D;position:relative}
 .nye-frame:after{content:'';position:absolute;inset:-6px -6px 0;border:1px solid rgba(184,146,60,.38);border-bottom:0;border-radius:999px 999px 0 0;pointer-events:none}
 .nye-pic{overflow:hidden;border-radius:999px 999px 0 0;background:#E7DFD0}
 .is-side .nye-pic{aspect-ratio:.66}
@@ -427,6 +430,7 @@ input{font-family:inherit;appearance:none;-webkit-appearance:none;border-radius:
             <h2>New Year’s Eve at <em>Palazzo Lanza Tomasi</em></h2>
             <p class="nye-date">31 December 2026 – 1 January 2027</p>
             <p class="nye-lead">Spend New Year’s Eve at Palazzo Lanza Tomasi in Palermo, welcomed by Nicoletta Polo Lanza Tomasi, Duchess of Palma.</p>
+            <p class="nye-prog-line"><b>Programme</b>Aperitif<i>·</i>Private tour of the rooms and the library<i>·</i>Live cello by Max Beitan and a saxophone quartet<i>·</i>Sicilian–Slavic festive dinner<i>·</i>Wine and Champagne</p>
             <a class="nye-cta" href="#nye-book" onClick="{{ onNyeOpen }}">Programme and booking</a>
           </div>
           <div class="nye-windows">
@@ -499,6 +503,7 @@ input{font-family:inherit;appearance:none;-webkit-appearance:none;border-radius:
             <h2>San Silvestro a <em>Palazzo Lanza Tomasi</em></h2>
             <p class="nye-date">31 dicembre 2026 – 1 gennaio 2027</p>
             <p class="nye-lead">Festeggiate San Silvestro a Palazzo Lanza Tomasi, a Palermo, accolti da Nicoletta Polo Lanza Tomasi, duchessa di Palma.</p>
+            <p class="nye-prog-line"><b>Programma</b>Aperitivo<i>·</i>Visita privata delle sale e della biblioteca<i>·</i>Violoncello dal vivo di Max Beitan e quartetto di sassofoni<i>·</i>Cena di festa siciliana e slava<i>·</i>Vino e champagne</p>
             <a class="nye-cta" href="#nye-book-it" onClick="{{ onNyeOpen }}">Programma e prenotazione</a>
           </div>
           <div class="nye-windows">
@@ -571,6 +576,7 @@ input{font-family:inherit;appearance:none;-webkit-appearance:none;border-radius:
             <h2>Новогодняя ночь в <em>Palazzo Lanza Tomasi</em></h2>
             <p class="nye-date">31 декабря 2026 — 1 января 2027</p>
             <p class="nye-lead">Встретьте Новый год в Palazzo Lanza Tomasi в Палермо, где гостей принимает Николетта Поло Ланца Томази, герцогиня Пальмы.</p>
+            <p class="nye-prog-line"><b>Программа</b>Аперитив<i>·</i>Частная экскурсия по залам и библиотеке<i>·</i>Виолончель Макса Бейтана и саксофонный квартет<i>·</i>Праздничный сицилийско-славянский ужин<i>·</i>Вино и шампанское</p>
             <a class="nye-cta" href="#nye-book-ru" onClick="{{ onNyeOpen }}">Программа и бронирование</a>
           </div>
           <div class="nye-windows">
