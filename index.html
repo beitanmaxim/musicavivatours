@@ -4,19 +4,19 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Musica Viva Tours — Private Concerts by Cellist Max Beitan</title>
-<meta name="description" content="Private concerts by cellist Max Beitan in heritage palaces and noble estates, curated by the Beitan Music Foundation. Eight seats per gathering. Next: Palermo, May 2027.">
+<meta name="description" content="Private concerts by cellist Max Beitan in heritage palaces and noble estates, curated by the Beitan Music Foundation. Eight seats per tour gathering. Next: New Year’s Eve at Palazzo Lanza Tomasi, Palermo (31 December 2026 – 1 January 2027); Palermo tour, May 2027.">
 <link rel="canonical" href="https://musicavivatours.com/">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Musica Viva Tours">
 <meta property="og:title" content="Musica Viva Tours — Private Concerts by Cellist Max Beitan">
-<meta property="og:description" content="Private concerts by cellist Max Beitan in heritage palaces and noble estates, curated by the Beitan Music Foundation. Eight seats per gathering. Next: Palermo, May 2027.">
+<meta property="og:description" content="Private concerts by cellist Max Beitan in heritage palaces and noble estates, curated by the Beitan Music Foundation. Eight seats per tour gathering. Next: New Year’s Eve at Palazzo Lanza Tomasi, Palermo (31 December 2026 – 1 January 2027); Palermo tour, May 2027.">
 <meta property="og:url" content="https://musicavivatours.com/">
 <meta property="og:image" content="https://musicavivatours.com/assets/mv-hero-poster.jpg">
 <meta property="og:locale" content="en_GB">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Musica Viva Tours — Private Concerts by Cellist Max Beitan">
-<meta name="twitter:description" content="Private concerts by cellist Max Beitan in heritage palaces and noble estates, curated by the Beitan Music Foundation. Eight seats per gathering. Next: Palermo, May 2027.">
+<meta name="twitter:description" content="Private concerts by cellist Max Beitan in heritage palaces and noble estates, curated by the Beitan Music Foundation. Eight seats per tour gathering. Next: New Year’s Eve at Palazzo Lanza Tomasi, Palermo (31 December 2026 – 1 January 2027); Palermo tour, May 2027.">
 <meta name="twitter:image" content="https://musicavivatours.com/assets/mv-hero-poster.jpg">
 <script type="application/ld+json">
 {
@@ -101,6 +101,41 @@
     "@id": "https://musicavivatours.com/#organization"
    },
    "image": "https://musicavivatours.com/assets/mv-portrait-natalya.jpg"
+  },
+  {
+   "@type": "MusicEvent",
+   "@id": "https://musicavivatours.com/#nye-2026",
+   "name": "New Year’s Eve at Palazzo Lanza Tomasi",
+   "alternateName": ["San Silvestro a Palazzo Lanza Tomasi", "Новогодняя ночь в Palazzo Lanza Tomasi"],
+   "description": "New Year’s Eve in Palermo, hosted by Nicoletta Polo Lanza Tomasi, Duchess of Palma: live cello by Max Beitan, a saxophone quartet, a Sicilian–Slavic festive dinner, wine and Champagne.",
+   "startDate": "2026-12-31",
+   "endDate": "2027-01-01",
+   "eventStatus": "https://schema.org/EventScheduled",
+   "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+   "inLanguage": ["en", "it", "ru"],
+   "location": {
+    "@type": "Place",
+    "name": "Palazzo Lanza Tomasi",
+    "address": {
+     "@type": "PostalAddress",
+     "addressLocality": "Palermo",
+     "addressCountry": "IT"
+    }
+   },
+   "performer": {
+    "@id": "https://musicavivatours.com/#max-beitan"
+   },
+   "organizer": {
+    "@id": "https://musicavivatours.com/#organization"
+   },
+   "image": "https://musicavivatours.com/assets/nye-raffadali-table-1200.jpg",
+   "offers": {
+    "@type": "Offer",
+    "price": "1000",
+    "priceCurrency": "EUR",
+    "url": "https://musicavivatours.com/#new-year",
+    "description": "Per guest, one payment in full. Accommodation and private transfers are not included."
+   }
   },
   {
    "@type": "MusicEvent",
@@ -212,7 +247,10 @@ input{font-family:inherit;appearance:none;-webkit-appearance:none;border-radius:
 @keyframes mvTrack{from{letter-spacing:.11em;transform:translateY(12px) scale(1.022)}to{letter-spacing:0;transform:translateY(0) scale(1)}}
 @keyframes mvFocus{from{opacity:0;filter:blur(7px)}to{opacity:1;filter:blur(0)}}
 .mv-gold{background:linear-gradient(95deg,#9A742B 0%,#E6C687 22%,#B8923C 44%,#F3E7C4 60%,#B8923C 78%,#9A742B 100%);background-size:100% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-#foundation,#artists,#tours,#gallery,#access{scroll-margin-top:88px}
+#new-year,#foundation,#artists,#tours,#gallery,#access{scroll-margin-top:88px}
+[data-desktop-nav] a{white-space:nowrap}
+.nye a:focus-visible,.nye button:focus-visible{outline:2px solid #C5A059;outline-offset:3px}
+.nye [hidden]{display:none !important}
 .mv-ggrid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(26px,3vw,46px)}
 @media (max-width:960px){.mv-ggrid{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:600px){.mv-ggrid{grid-template-columns:1fr}}
@@ -239,6 +277,7 @@ input{font-family:inherit;appearance:none;-webkit-appearance:none;border-radius:
       </span>
     </a>
     <nav data-desktop-nav style="display:flex;align-items:center;gap:clamp(22px,2.6vw,40px)">
+      <a href="#new-year" data-navlink onMouseEnter="{{ onLinkEnter }}" onMouseLeave="{{ onLinkLeave }}" style="position:relative;text-decoration:none;color:#16323D;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;font-weight:400;padding-bottom:5px;transition:color .4s ease">New Year<span style="position:absolute;left:0;bottom:0;height:1px;width:0;background:#B8923C;transition:width .5s cubic-bezier(.16,.7,.2,1)"></span></a>
       <a href="#foundation" data-navlink onMouseEnter="{{ onLinkEnter }}" onMouseLeave="{{ onLinkLeave }}" style="position:relative;text-decoration:none;color:#16323D;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;font-weight:400;padding-bottom:5px;transition:color .4s ease">The Foundation<span style="position:absolute;left:0;bottom:0;height:1px;width:0;background:#B8923C;transition:width .5s cubic-bezier(.16,.7,.2,1)"></span></a>
       <a href="#artists" data-navlink onMouseEnter="{{ onLinkEnter }}" onMouseLeave="{{ onLinkLeave }}" style="position:relative;text-decoration:none;color:#16323D;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;font-weight:400;padding-bottom:5px;transition:color .4s ease">The Custodians<span style="position:absolute;left:0;bottom:0;height:1px;width:0;background:#B8923C;transition:width .5s cubic-bezier(.16,.7,.2,1)"></span></a>
       <a href="#tours" data-navlink onMouseEnter="{{ onLinkEnter }}" onMouseLeave="{{ onLinkLeave }}" style="position:relative;text-decoration:none;color:#16323D;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;font-weight:400;padding-bottom:5px;transition:color .4s ease">Tours<span style="position:absolute;left:0;bottom:0;height:1px;width:0;background:#B8923C;transition:width .5s cubic-bezier(.16,.7,.2,1)"></span></a>
@@ -257,6 +296,7 @@ input{font-family:inherit;appearance:none;-webkit-appearance:none;border-radius:
       <span style="position:absolute;left:3px;top:14px;width:24px;height:1px;background:#16323D;transform:rotate(45deg)"></span>
       <span style="position:absolute;left:3px;top:14px;width:24px;height:1px;background:#16323D;transform:rotate(-45deg)"></span>
     </button>
+    <a href="#new-year" onClick="{{ toggleMenu }}" style="text-decoration:none;color:#16323D;font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif;font-size:1.8rem;letter-spacing:.04em">New Year’s Eve</a>
     <a href="#foundation" onClick="{{ toggleMenu }}" style="text-decoration:none;color:#16323D;font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif;font-size:1.8rem;letter-spacing:.04em">The Foundation</a>
     <a href="#artists" onClick="{{ toggleMenu }}" style="text-decoration:none;color:#16323D;font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif;font-size:1.8rem;letter-spacing:.04em">The Custodians</a>
     <a href="#tours" onClick="{{ toggleMenu }}" style="text-decoration:none;color:#16323D;font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif;font-size:1.8rem;letter-spacing:.04em">Tours</a>
@@ -279,6 +319,230 @@ input{font-family:inherit;appearance:none;-webkit-appearance:none;border-radius:
       </h1>
       <p style="opacity:0;animation:mvFadeUp 1.2s cubic-bezier(.16,1,.3,1) 1.05s both;max-width:560px;margin:34px auto 0;font-size:1rem;line-height:1.75;color:rgba(255,255,255,.9);font-weight:300;text-shadow:0 1px 18px rgba(0,0,0,.5)">Private concerts by cellist Max Beitan, staged within heritage palaces and noble estates — curated by the Beitan Music Foundation.</p>
     </div>
+  </section>
+
+  <!-- ░░ NEW YEAR'S EVE 2026 · PALERMO (EN / IT / RU) ░░ -->
+  <!-- PDF downloads (brochure, flyer) are intentionally not linked: add per-language links only once the final files exist in assets/. -->
+  <section id="new-year" class="nye" data-screen-label="New Year's Eve" style="position:relative;background:#0F3B2C;color:#F8F6F0">
+    <div aria-hidden="true" style="height:40px;background:#0F3B2C url(assets/nye-majolica.svg) repeat-x center/auto 40px;border-bottom:1px solid rgba(197,160,89,.5)"></div>
+    <div style="padding:clamp(56px,9vh,120px) clamp(20px,6vw,96px) clamp(72px,11vh,140px)">
+      <div style="max-width:1280px;margin:0 auto">
+      <div role="group" aria-label="Language / Lingua / Язык" style="display:flex;justify-content:flex-end;gap:0;margin-bottom:clamp(28px,4vh,48px)">
+        <button type="button" data-lang-btn="en" lang="en" aria-label="English" aria-pressed="true" onClick="{{ onNyeLang }}" style="min-width:48px;min-height:44px;padding:0 14px;cursor:pointer;background:#C5A059;color:#0F3B2C;border:1px solid #C5A059;font-family:'Inter',system-ui,sans-serif;font-size:.68rem;letter-spacing:.2em;font-weight:500">EN</button>
+        <button type="button" data-lang-btn="it" lang="it" aria-label="Italiano" aria-pressed="false" onClick="{{ onNyeLang }}" style="min-width:48px;min-height:44px;padding:0 14px;cursor:pointer;background:transparent;color:#F8F6F0;border:1px solid #C5A059;font-family:'Inter',system-ui,sans-serif;font-size:.68rem;letter-spacing:.2em;font-weight:500">IT</button>
+        <button type="button" data-lang-btn="ru" lang="ru" aria-label="Русский" aria-pressed="false" onClick="{{ onNyeLang }}" style="min-width:48px;min-height:44px;padding:0 14px;cursor:pointer;background:transparent;color:#F8F6F0;border:1px solid #C5A059;font-family:'Inter',system-ui,sans-serif;font-size:.68rem;letter-spacing:.2em;font-weight:500">RU</button>
+      </div>
+
+      <div data-nye-lang="en" lang="en">
+        <div style="display:flex;flex-wrap:wrap;gap:clamp(40px,6vw,96px);align-items:flex-start">
+          <div style="flex:1 1 460px;min-width:280px">
+            <div style="display:flex;align-items:center;gap:14px;margin-bottom:26px">
+              <span style="width:40px;height:1px;background:#C5A059"></span>
+              <span style="font-size:.66rem;letter-spacing:.32em;text-transform:uppercase;color:#C5A059;font-weight:500">New Year’s Eve · Palermo</span>
+            </div>
+            <h2 style="margin:0;font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif;font-weight:400;font-size:clamp(2.5rem,5.4vw,4.6rem);line-height:1.02;letter-spacing:-.012em;color:#F8F6F0">New Year’s Eve at <span style="font-style:italic;font-weight:300;display:block">Palazzo Lanza Tomasi</span></h2>
+            <p style="margin:26px 0 0;font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif;font-style:italic;font-size:clamp(1.3rem,2.2vw,1.8rem);line-height:1.3;color:#C5A059;font-variant-numeric:lining-nums">31 December 2026 – 1 January 2027</p>
+            <p style="margin:30px 0 0;max-width:560px;font-size:.98rem;line-height:1.85;color:rgba(248,246,240,.88);font-weight:300">Spend New Year’s Eve at Palazzo Lanza Tomasi in Palermo, welcomed by Nicoletta Polo Lanza Tomasi, Duchess of Palma. The evening brings together live cello by Max Beitan, a saxophone quartet, a Sicilian–Slavic festive dinner, wine and Champagne.</p>
+            <a href="#nye-book" style="display:inline-block;margin-top:36px;text-decoration:none;background:#7D1A2A;color:#F8F6F0;border:1px solid #C5A059;padding:17px 32px;min-height:48px;font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;font-weight:400">Programme and booking</a>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:36px 44px;margin-top:clamp(44px,6vh,72px);padding-top:34px;border-top:1px solid rgba(197,160,89,.4)">
+              <div>
+                <h3 style="margin:0 0 14px;font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:#C5A059;font-weight:500;font-family:'Inter',system-ui,sans-serif">The host and the house</h3>
+                <p style="margin:0;font-size:.94rem;line-height:1.8;color:rgba(248,246,240,.86);font-weight:300">Nicoletta Polo Lanza Tomasi, Duchess of Palma, receives the guests in Palermo, in the house of the author of <em>The Leopard</em>. The evening includes a private tour of the rooms and the library.</p>
+              </div>
+              <div>
+                <h3 style="margin:0 0 14px;font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:#C5A059;font-weight:500;font-family:'Inter',system-ui,sans-serif">The evening</h3>
+                <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;font-size:.94rem;line-height:1.6;color:rgba(248,246,240,.86);font-weight:300">
+            <li style="display:flex;gap:12px"><span aria-hidden="true" style="color:#C5A059;flex-shrink:0">·</span><span>Aperitif</span></li>
+            <li style="display:flex;gap:12px"><span aria-hidden="true" style="color:#C5A059;flex-shrink:0">·</span><span>Private tour of the rooms and the library</span></li>
+            <li style="display:flex;gap:12px"><span aria-hidden="true" style="color:#C5A059;flex-shrink:0">·</span><span>Live cello by Max Beitan and a saxophone quartet</span></li>
+            <li style="display:flex;gap:12px"><span aria-hidden="true" style="color:#C5A059;flex-shrink:0">·</span><span>Sicilian–Slavic festive dinner</span></li>
+            <li style="display:flex;gap:12px"><span aria-hidden="true" style="color:#C5A059;flex-shrink:0">·</span><span>Wine and Champagne</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <figure style="flex:0 1 440px;min-width:280px;margin:0;width:100%">
+            <div style="position:relative;border:1px solid #C5A059;padding:10px">
+              <img src="assets/nye-raffadali-table-1200.jpg" srcset="assets/nye-raffadali-table-720.jpg 645w, assets/nye-raffadali-table-1200.jpg 1075w" sizes="(max-width:760px) 92vw, 440px" width="1075" height="1200" alt="A long dinner table laid with silver candelabra, lit candles, glasses and napkins in a dim palace dining room" style="display:block;width:100%;height:auto;aspect-ratio:1075/1200;object-fit:cover">
+            </div>
+            <figcaption style="margin-top:14px;font-size:.72rem;letter-spacing:.06em;color:rgba(248,246,240,.7)">Archive: a dinner at Palazzo Raffadali, Sicily.</figcaption>
+          </figure>
+        </div>
+
+        <div id="nye-book" style="scroll-margin-top:88px;margin-top:clamp(56px,8vh,104px);background:#F8F6F0;color:#0F3B2C;padding:clamp(30px,4.5vw,64px);border-top:3px solid #7D1A2A">
+          <div style="display:flex;flex-wrap:wrap;gap:36px clamp(40px,6vw,96px);align-items:flex-start">
+            <div style="flex:1 1 260px;min-width:240px">
+              <h3 style="margin:0 0 14px;font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:#7D1A2A;font-weight:500;font-family:'Inter',system-ui,sans-serif">Price</h3>
+              <p style="margin:0;font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif;font-weight:500;font-size:clamp(2.8rem,5vw,4rem);line-height:1;color:#7D1A2A;font-variant-numeric:lining-nums">€1,000</p>
+              <p style="margin:12px 0 0;font-size:.86rem;line-height:1.6;color:rgba(15,59,44,.78)">per guest · one payment, in full</p>
+            </div>
+            <div style="flex:1 1 220px;min-width:200px">
+              <h3 style="margin:0 0 14px;font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:#7D1A2A;font-weight:500;font-family:'Inter',system-ui,sans-serif">Included</h3>
+              <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;font-size:.94rem;line-height:1.6;color:#0F3B2C">
+            <li style="display:flex;gap:12px"><span aria-hidden="true" style="color:#7D1A2A;flex-shrink:0">·</span><span>Aperitif</span></li>
+            <li style="display:flex;gap:12px"><span aria-hidden="true" style="color:#7D1A2A;flex-shrink:0">·</span><span>Private tour of the rooms and the library</span></li>
+            <li style="display:flex;gap:12px"><span aria-hidden="true" style="color:#7D1A2A;flex-shrink:0">·</span><span>Music: cello and saxophone quartet</span></li>
+            <li style="display:flex;gap:12px"><span aria-hidden="true" style="color:#7D1A2A;flex-shrink:0">·</span><span>Festive dinner, wine and Champagne</span></li>
+              </ul>
+            </div>
+            <div style="flex:1 1 180px;min-width:180px">
+              <h3 style="margin:0 0 14px;font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:#7D1A2A;font-weight:500;font-family:'Inter',system-ui,sans-serif">Not included</h3>
+              <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;font-size:.94rem;line-height:1.6;color:#0F3B2C">
+            <li style="display:flex;gap:12px"><span aria-hidden="true" style="color:#7D1A2A;flex-shrink:0">·</span><span>Accommodation</span></li>
+            <li style="display:flex;gap:12px"><span aria-hidden="true" style="color:#7D1A2A;flex-shrink:0">·</span><span>Private transfers</span></li>
+              </ul>
+            </div>
+          </div>
+          <div style="margin-top:38px;padding-top:30px;border-top:1px solid rgba(15,59,44,.2);display:flex;flex-wrap:wrap;gap:24px 40px;align-items:center;justify-content:space-between">
+            <div style="flex:1 1 300px;max-width:520px">
+              <a href="https://buy.stripe.com/6oUdR9a4V2ahfEYbeW7Zu02" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;background:#7D1A2A;color:#F8F6F0;border:1px solid #7D1A2A;padding:18px 28px;min-height:56px;font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;font-weight:500">Pay for one guest · €1,000</a>
+              <p style="margin:14px 0 0;font-size:.78rem;line-height:1.6;color:rgba(15,59,44,.78)">Opens Stripe’s secure checkout in a new tab. Card details are never entered on this site.</p>
+            </div>
+            <p style="flex:1 1 240px;margin:0;font-size:.86rem;line-height:1.8;color:rgba(15,59,44,.86)">Questions before booking:<br><a data-mv-email style="display:inline-block;padding:10px 0 6px;color:#0F3B2C;text-decoration:none;border-bottom:1px solid #C5A059"></a><br><span>+41 77 929 44 77</span></p>
+          </div>
+        </div>
+      </div>
+      <div data-nye-lang="it" lang="it" hidden="hidden">
+        <div style="display:flex;flex-wrap:wrap;gap:clamp(40px,6vw,96px);align-items:flex-start">
+          <div style="flex:1 1 460px;min-width:280px">
+            <div style="display:flex;align-items:center;gap:14px;margin-bottom:26px">
+              <span style="width:40px;height:1px;background:#C5A059"></span>
+              <span style="font-size:.66rem;letter-spacing:.32em;text-transform:uppercase;color:#C5A059;font-weight:500">San Silvestro · Palermo</span>
+            </div>
+            <h2 style="margin:0;font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif;font-weight:400;font-size:clamp(2.5rem,5.4vw,4.6rem);line-height:1.02;letter-spacing:-.012em;color:#F8F6F0">San Silvestro a <span style="font-style:italic;font-weight:300;display:block">Palazzo Lanza Tomasi</span></h2>
+            <p style="margin:26px 0 0;font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif;font-style:italic;font-size:clamp(1.3rem,2.2vw,1.8rem);line-height:1.3;color:#C5A059;font-variant-numeric:lining-nums">31 dicembre 2026 – 1 gennaio 2027</p>
+            <p style="margin:30px 0 0;max-width:560px;font-size:.98rem;line-height:1.85;color:rgba(248,246,240,.88);font-weight:300">Festeggiate San Silvestro a Palazzo Lanza Tomasi, a Palermo, accolti da Nicoletta Polo Lanza Tomasi, duchessa di Palma. La serata unisce il violoncello dal vivo di Max Beitan, un quartetto di sassofoni, una cena di festa siciliana e slava, vino e champagne.</p>
+            <a href="#nye-book-it" style="display:inline-block;margin-top:36px;text-decoration:none;background:#7D1A2A;color:#F8F6F0;border:1px solid #C5A059;padding:17px 32px;min-height:48px;font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;font-weight:400">Programma e prenotazione</a>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:36px 44px;margin-top:clamp(44px,6vh,72px);padding-top:34px;border-top:1px solid rgba(197,160,89,.4)">
+              <div>
+                <h3 style="margin:0 0 14px;font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:#C5A059;font-weight:500;font-family:'Inter',system-ui,sans-serif">L’ospite e la casa</h3>
+                <p style="margin:0;font-size:.94rem;line-height:1.8;color:rgba(248,246,240,.86);font-weight:300">Nicoletta Polo Lanza Tomasi, duchessa di Palma, accoglie gli ospiti a Palermo, nella casa dell’autore del <em>Gattopardo</em>. La serata comprende una visita privata delle sale e della biblioteca.</p>
+              </div>
+              <div>
+                <h3 style="margin:0 0 14px;font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:#C5A059;font-weight:500;font-family:'Inter',system-ui,sans-serif">La serata</h3>
+                <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;font-size:.94rem;line-height:1.6;color:rgba(248,246,240,.86);font-weight:300">
+            <li style="display:flex;gap:12px"><span aria-hidden="true" style="color:#C5A059;flex-shrink:0">·</span><span>Aperitivo</span></li>
+            <li style="display:flex;gap:12px"><span aria-hidden="true" style="color:#C5A059;flex-shrink:0">·</span><span>Visita privata delle sale e della biblioteca</span></li>
+            <li style="display:flex;gap:12px"><span aria-hidden="true" style="color:#C5A059;flex-shrink:0">·</span><span>Violoncello dal vivo di Max Beitan e quartetto di sassofoni</span></li>
+            <li style="display:flex;gap:12px"><span aria-hidden="true" style="color:#C5A059;flex-shrink:0">·</span><span>Cena di festa siciliana e slava</span></li>
+            <li style="display:flex;gap:12px"><span aria-hidden="true" style="color:#C5A059;flex-shrink:0">·</span><span>Vino e champagne</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <figure style="flex:0 1 440px;min-width:280px;margin:0;width:100%">
+            <div style="position:relative;border:1px solid #C5A059;padding:10px">
+              <img src="assets/nye-raffadali-table-1200.jpg" srcset="assets/nye-raffadali-table-720.jpg 645w, assets/nye-raffadali-table-1200.jpg 1075w" sizes="(max-width:760px) 92vw, 440px" width="1075" height="1200" alt="Una lunga tavola apparecchiata con candelabri d’argento, candele accese, bicchieri e tovaglioli in una sala da pranzo di palazzo in penombra" style="display:block;width:100%;height:auto;aspect-ratio:1075/1200;object-fit:cover">
+            </div>
+            <figcaption style="margin-top:14px;font-size:.72rem;letter-spacing:.06em;color:rgba(248,246,240,.7)">Archivio: una cena a Palazzo Raffadali, Sicilia.</figcaption>
+          </figure>
+        </div>
+
+        <div id="nye-book-it" style="scroll-margin-top:88px;margin-top:clamp(56px,8vh,104px);background:#F8F6F0;color:#0F3B2C;padding:clamp(30px,4.5vw,64px);border-top:3px solid #7D1A2A">
+          <div style="display:flex;flex-wrap:wrap;gap:36px clamp(40px,6vw,96px);align-items:flex-start">
+            <div style="flex:1 1 260px;min-width:240px">
+              <h3 style="margin:0 0 14px;font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:#7D1A2A;font-weight:500;font-family:'Inter',system-ui,sans-serif">Prezzo</h3>
+              <p style="margin:0;font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif;font-weight:500;font-size:clamp(2.8rem,5vw,4rem);line-height:1;color:#7D1A2A;font-variant-numeric:lining-nums">€1.000</p>
+              <p style="margin:12px 0 0;font-size:.86rem;line-height:1.6;color:rgba(15,59,44,.78)">a persona · pagamento unico, per intero</p>
+            </div>
+            <div style="flex:1 1 220px;min-width:200px">
+              <h3 style="margin:0 0 14px;font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:#7D1A2A;font-weight:500;font-family:'Inter',system-ui,sans-serif">Incluso</h3>
+              <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;font-size:.94rem;line-height:1.6;color:#0F3B2C">
+            <li style="display:flex;gap:12px"><span aria-hidden="true" style="color:#7D1A2A;flex-shrink:0">·</span><span>Aperitivo</span></li>
+            <li style="display:flex;gap:12px"><span aria-hidden="true" style="color:#7D1A2A;flex-shrink:0">·</span><span>Visita privata delle sale e della biblioteca</span></li>
+            <li style="display:flex;gap:12px"><span aria-hidden="true" style="color:#7D1A2A;flex-shrink:0">·</span><span>Musica: violoncello e quartetto di sassofoni</span></li>
+            <li style="display:flex;gap:12px"><span aria-hidden="true" style="color:#7D1A2A;flex-shrink:0">·</span><span>Cena di festa, vino e champagne</span></li>
+              </ul>
+            </div>
+            <div style="flex:1 1 180px;min-width:180px">
+              <h3 style="margin:0 0 14px;font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:#7D1A2A;font-weight:500;font-family:'Inter',system-ui,sans-serif">Non incluso</h3>
+              <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;font-size:.94rem;line-height:1.6;color:#0F3B2C">
+            <li style="display:flex;gap:12px"><span aria-hidden="true" style="color:#7D1A2A;flex-shrink:0">·</span><span>Alloggio</span></li>
+            <li style="display:flex;gap:12px"><span aria-hidden="true" style="color:#7D1A2A;flex-shrink:0">·</span><span>Transfer privati</span></li>
+              </ul>
+            </div>
+          </div>
+          <div style="margin-top:38px;padding-top:30px;border-top:1px solid rgba(15,59,44,.2);display:flex;flex-wrap:wrap;gap:24px 40px;align-items:center;justify-content:space-between">
+            <div style="flex:1 1 300px;max-width:520px">
+              <a href="https://buy.stripe.com/6oUdR9a4V2ahfEYbeW7Zu02" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;background:#7D1A2A;color:#F8F6F0;border:1px solid #7D1A2A;padding:18px 28px;min-height:56px;font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;font-weight:500">Paga per un ospite · €1.000</a>
+              <p style="margin:14px 0 0;font-size:.78rem;line-height:1.6;color:rgba(15,59,44,.78)">Si apre il checkout sicuro di Stripe in una nuova scheda. I dati della carta non vengono mai inseriti su questo sito.</p>
+            </div>
+            <p style="flex:1 1 240px;margin:0;font-size:.86rem;line-height:1.8;color:rgba(15,59,44,.86)">Domande prima di prenotare:<br><a data-mv-email style="display:inline-block;padding:10px 0 6px;color:#0F3B2C;text-decoration:none;border-bottom:1px solid #C5A059"></a><br><span>+41 77 929 44 77</span></p>
+          </div>
+        </div>
+      </div>
+      <div data-nye-lang="ru" lang="ru" hidden="hidden">
+        <div style="display:flex;flex-wrap:wrap;gap:clamp(40px,6vw,96px);align-items:flex-start">
+          <div style="flex:1 1 460px;min-width:280px">
+            <div style="display:flex;align-items:center;gap:14px;margin-bottom:26px">
+              <span style="width:40px;height:1px;background:#C5A059"></span>
+              <span style="font-size:.66rem;letter-spacing:.32em;text-transform:uppercase;color:#C5A059;font-weight:500">Новогодняя ночь · Палермо</span>
+            </div>
+            <h2 style="margin:0;font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif;font-weight:400;font-size:clamp(2.5rem,5.4vw,4.6rem);line-height:1.02;letter-spacing:-.012em;color:#F8F6F0">Новогодняя ночь в <span style="font-style:italic;font-weight:300;display:block">Palazzo Lanza Tomasi</span></h2>
+            <p style="margin:26px 0 0;font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif;font-style:italic;font-size:clamp(1.3rem,2.2vw,1.8rem);line-height:1.3;color:#C5A059;font-variant-numeric:lining-nums">31 декабря 2026 — 1 января 2027</p>
+            <p style="margin:30px 0 0;max-width:560px;font-size:.98rem;line-height:1.85;color:rgba(248,246,240,.88);font-weight:300">Встретьте Новый год в Palazzo Lanza Tomasi в Палермо, где гостей принимает Николетта Поло Ланца Томази, герцогиня Пальмы. Вечер объединит виолончель Макса Бейтана, саксофонный квартет, праздничный сицилийско-славянский ужин, вино и шампанское.</p>
+            <a href="#nye-book-ru" style="display:inline-block;margin-top:36px;text-decoration:none;background:#7D1A2A;color:#F8F6F0;border:1px solid #C5A059;padding:17px 32px;min-height:48px;font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;font-weight:400">Программа и бронирование</a>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:36px 44px;margin-top:clamp(44px,6vh,72px);padding-top:34px;border-top:1px solid rgba(197,160,89,.4)">
+              <div>
+                <h3 style="margin:0 0 14px;font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:#C5A059;font-weight:500;font-family:'Inter',system-ui,sans-serif">Хозяйка и дом</h3>
+                <p style="margin:0;font-size:.94rem;line-height:1.8;color:rgba(248,246,240,.86);font-weight:300">Николетта Поло Ланца Томази, герцогиня Пальмы, принимает гостей в Палермо, в доме автора «Леопарда». В программе вечера частная экскурсия по залам и библиотеке.</p>
+              </div>
+              <div>
+                <h3 style="margin:0 0 14px;font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:#C5A059;font-weight:500;font-family:'Inter',system-ui,sans-serif">Вечер</h3>
+                <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;font-size:.94rem;line-height:1.6;color:rgba(248,246,240,.86);font-weight:300">
+            <li style="display:flex;gap:12px"><span aria-hidden="true" style="color:#C5A059;flex-shrink:0">·</span><span>Аперитив</span></li>
+            <li style="display:flex;gap:12px"><span aria-hidden="true" style="color:#C5A059;flex-shrink:0">·</span><span>Частная экскурсия по залам и библиотеке</span></li>
+            <li style="display:flex;gap:12px"><span aria-hidden="true" style="color:#C5A059;flex-shrink:0">·</span><span>Виолончель Макса Бейтана и саксофонный квартет</span></li>
+            <li style="display:flex;gap:12px"><span aria-hidden="true" style="color:#C5A059;flex-shrink:0">·</span><span>Праздничный сицилийско-славянский ужин</span></li>
+            <li style="display:flex;gap:12px"><span aria-hidden="true" style="color:#C5A059;flex-shrink:0">·</span><span>Вино и шампанское</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <figure style="flex:0 1 440px;min-width:280px;margin:0;width:100%">
+            <div style="position:relative;border:1px solid #C5A059;padding:10px">
+              <img src="assets/nye-raffadali-table-1200.jpg" srcset="assets/nye-raffadali-table-720.jpg 645w, assets/nye-raffadali-table-1200.jpg 1075w" sizes="(max-width:760px) 92vw, 440px" width="1075" height="1200" alt="Длинный стол с серебряными канделябрами, зажжёнными свечами, бокалами и салфетками в полутёмной столовой палаццо" style="display:block;width:100%;height:auto;aspect-ratio:1075/1200;object-fit:cover">
+            </div>
+            <figcaption style="margin-top:14px;font-size:.72rem;letter-spacing:.06em;color:rgba(248,246,240,.7)">Архив: ужин в Palazzo Raffadali, Сицилия.</figcaption>
+          </figure>
+        </div>
+
+        <div id="nye-book-ru" style="scroll-margin-top:88px;margin-top:clamp(56px,8vh,104px);background:#F8F6F0;color:#0F3B2C;padding:clamp(30px,4.5vw,64px);border-top:3px solid #7D1A2A">
+          <div style="display:flex;flex-wrap:wrap;gap:36px clamp(40px,6vw,96px);align-items:flex-start">
+            <div style="flex:1 1 260px;min-width:240px">
+              <h3 style="margin:0 0 14px;font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:#7D1A2A;font-weight:500;font-family:'Inter',system-ui,sans-serif">Стоимость</h3>
+              <p style="margin:0;font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif;font-weight:500;font-size:clamp(2.8rem,5vw,4rem);line-height:1;color:#7D1A2A;font-variant-numeric:lining-nums">€1000</p>
+              <p style="margin:12px 0 0;font-size:.86rem;line-height:1.6;color:rgba(15,59,44,.78)">с человека · одна оплата, полностью</p>
+            </div>
+            <div style="flex:1 1 220px;min-width:200px">
+              <h3 style="margin:0 0 14px;font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:#7D1A2A;font-weight:500;font-family:'Inter',system-ui,sans-serif">Входит</h3>
+              <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;font-size:.94rem;line-height:1.6;color:#0F3B2C">
+            <li style="display:flex;gap:12px"><span aria-hidden="true" style="color:#7D1A2A;flex-shrink:0">·</span><span>Аперитив</span></li>
+            <li style="display:flex;gap:12px"><span aria-hidden="true" style="color:#7D1A2A;flex-shrink:0">·</span><span>Частная экскурсия по залам и библиотеке</span></li>
+            <li style="display:flex;gap:12px"><span aria-hidden="true" style="color:#7D1A2A;flex-shrink:0">·</span><span>Музыка: виолончель и саксофонный квартет</span></li>
+            <li style="display:flex;gap:12px"><span aria-hidden="true" style="color:#7D1A2A;flex-shrink:0">·</span><span>Праздничный ужин, вино и шампанское</span></li>
+              </ul>
+            </div>
+            <div style="flex:1 1 180px;min-width:180px">
+              <h3 style="margin:0 0 14px;font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:#7D1A2A;font-weight:500;font-family:'Inter',system-ui,sans-serif">Не входит</h3>
+              <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;font-size:.94rem;line-height:1.6;color:#0F3B2C">
+            <li style="display:flex;gap:12px"><span aria-hidden="true" style="color:#7D1A2A;flex-shrink:0">·</span><span>Размещение</span></li>
+            <li style="display:flex;gap:12px"><span aria-hidden="true" style="color:#7D1A2A;flex-shrink:0">·</span><span>Индивидуальный трансфер</span></li>
+              </ul>
+            </div>
+          </div>
+          <div style="margin-top:38px;padding-top:30px;border-top:1px solid rgba(15,59,44,.2);display:flex;flex-wrap:wrap;gap:24px 40px;align-items:center;justify-content:space-between">
+            <div style="flex:1 1 300px;max-width:520px">
+              <a href="https://buy.stripe.com/6oUdR9a4V2ahfEYbeW7Zu02" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;background:#7D1A2A;color:#F8F6F0;border:1px solid #7D1A2A;padding:18px 28px;min-height:56px;font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;font-weight:500">Оплатить за одного гостя · €1000</a>
+              <p style="margin:14px 0 0;font-size:.78rem;line-height:1.6;color:rgba(15,59,44,.78)">Откроется защищённая страница оплаты Stripe в новой вкладке. Данные карты на этом сайте не вводятся.</p>
+            </div>
+            <p style="flex:1 1 240px;margin:0;font-size:.86rem;line-height:1.8;color:rgba(15,59,44,.86)">Вопросы до бронирования:<br><a data-mv-email style="display:inline-block;padding:10px 0 6px;color:#0F3B2C;text-decoration:none;border-bottom:1px solid #C5A059"></a><br><span>+41 77 929 44 77</span></p>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div aria-hidden="true" style="height:40px;background:#0F3B2C url(assets/nye-majolica.svg) repeat-x center/auto 40px;border-top:1px solid rgba(197,160,89,.5)"></div>
   </section>
 
   <!-- ░░ MANIFESTO ░░ -->
@@ -636,6 +900,7 @@ input{font-family:inherit;appearance:none;-webkit-appearance:none;border-radius:
           </span>
         </div>
         <nav style="display:flex;flex-wrap:wrap;gap:26px 34px">
+          <a href="#new-year" onMouseEnter="{{ onFootEnter }}" onMouseLeave="{{ onFootLeave }}" style="text-decoration:none;color:#cde0e8;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;transition:color .35s ease">New Year’s Eve</a>
           <a href="#foundation" onMouseEnter="{{ onFootEnter }}" onMouseLeave="{{ onFootLeave }}" style="text-decoration:none;color:#cde0e8;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;transition:color .35s ease">The Foundation</a>
           <a href="#artists" onMouseEnter="{{ onFootEnter }}" onMouseLeave="{{ onFootLeave }}" style="text-decoration:none;color:#cde0e8;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;transition:color .35s ease">The Custodians</a>
           <a href="#tours" onMouseEnter="{{ onFootEnter }}" onMouseLeave="{{ onFootLeave }}" style="text-decoration:none;color:#cde0e8;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;transition:color .35s ease">Tours</a>
@@ -723,7 +988,7 @@ class Component extends DCLogic {
     this._mobToggle = root.querySelector('[data-mobile-toggle]');
     this._drawer = root.querySelector('[data-mobile-drawer]');
     this._applyResponsive = () => {
-      const mobile = window.innerWidth < 880;
+      const mobile = window.innerWidth < 1180;
       if (this._deskNav) this._deskNav.style.display = mobile ? 'none' : 'flex';
       if (this._mobToggle) this._mobToggle.style.display = mobile ? 'flex' : 'none';
       if (!mobile && this._menuOpen) this._setMenu(false);
@@ -733,11 +998,30 @@ class Component extends DCLogic {
 
     // ── Contact email: assembled at runtime (avoids scraper harvesting and
     //    Cloudflare email-obfuscation rewriting inside the template) ──
-    const em = root.querySelector('[data-mv-email]');
-    if (em) {
+    root.querySelectorAll('[data-mv-email]').forEach((em) => {
       const addr = 'info' + '@' + 'musicavivatours.com';
       em.setAttribute('href', 'mailto:' + addr);
       em.textContent = addr;
+    });
+
+    // ── New Year's Eve: EN/IT/RU switch. Deep links: #new-year (EN), #new-year-it, #new-year-ru ──
+    this._onHash = () => {
+      const m = /^#new-year(?:-(it|ru))?$/.exec(window.location.hash);
+      if (m && m[1]) {
+        this._setNyeLang(m[1]);
+        const sec = root.querySelector('#new-year');
+        if (sec) sec.scrollIntoView();
+      }
+    };
+    window.addEventListener('hashchange', this._onHash);
+    const dl = /^#new-year-(it|ru)$/.exec(window.location.hash);
+    if (dl) {
+      this._setNyeLang(dl[1]);
+      // Late layout (fonts, video) can shift the page, so re-check a few times.
+      [350, 900, 1800].forEach((ms) => setTimeout(() => {
+        const sec = root.querySelector('#new-year');
+        if (sec && Math.abs(sec.getBoundingClientRect().top - 88) > 6) sec.scrollIntoView({ behavior: 'instant' });
+      }, ms));
     }
 
     // ── Hero video: load + pause when tab hidden ──
@@ -760,8 +1044,21 @@ class Component extends DCLogic {
     window.removeEventListener('scroll', this._onScroll);
     window.removeEventListener('resize', this._onScroll);
     window.removeEventListener('resize', this._applyResponsive);
+    if (this._onHash) window.removeEventListener('hashchange', this._onHash);
     if (this._hero) this._hero.removeEventListener('mousemove', this._onMove);
     if (this._onVis) document.removeEventListener('visibilitychange', this._onVis);
+  }
+
+  _setNyeLang(code) {
+    const root = this.root.current;
+    if (!root) return;
+    root.querySelectorAll('[data-nye-lang]').forEach((b) => { b.hidden = b.getAttribute('data-nye-lang') !== code; });
+    root.querySelectorAll('[data-lang-btn]').forEach((b) => {
+      const on = b.getAttribute('data-lang-btn') === code;
+      b.setAttribute('aria-pressed', on ? 'true' : 'false');
+      b.style.background = on ? '#C5A059' : 'transparent';
+      b.style.color = on ? '#0F3B2C' : '#F8F6F0';
+    });
   }
 
   _setMenu(open) {
@@ -778,6 +1075,11 @@ class Component extends DCLogic {
     return {
       root: this.root,
       toggleMenu: () => this._setMenu(!this._menuOpen),
+      onNyeLang: (e) => {
+        const code = e.currentTarget.getAttribute('data-lang-btn');
+        this._setNyeLang(code);
+        try { history.replaceState(null, '', code === 'en' ? '#new-year' : '#new-year-' + code); } catch (err) {}
+      },
       onLinkEnter: (e) => {
         this._hovered = e.currentTarget;
         const bar = e.currentTarget.querySelector('span');
